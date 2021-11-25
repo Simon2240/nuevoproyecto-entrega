@@ -1,0 +1,424 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(27,36,41,1) 50%, rgba(22,60,56,1) 100%);
+}
+
+/* HEADER INDEX*/
+
+.gridContainer{
+    padding: 4px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 4rem;
+    align-items: center;
+    background-color: #183247;
+}
+.menu ul{
+    list-style: none;
+}
+.menu li{
+    display: inline-block;
+    padding: 0 1rem;
+    position: relative;
+    top: 20px;
+}
+.menu a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.857);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.logo img{
+    width: 250px;
+    height: 74px;
+    position: relative;
+    top: 14.7px;
+}
+/*SECTION 1*/
+.containerAbout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10rem auto auto auto 1fr;
+    grid-template-areas: 
+        "h3 h3"
+        "imagen1 texto1"
+        "texto2 imagen2" 
+    ;
+}
+.aboutUs{
+    height: 2000px;
+}
+.imagenAbout{
+    background-color: rgb(0, 0, 0);
+}
+
+.imagenAbout img{
+    opacity: 0.9;
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    left: 16rem;
+}
+.imagenAbout p{
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.919);
+    background-color: rgba(26, 26, 26, 0.583);
+    position: absolute;
+    text-align: center;
+    left: 40%;
+    padding: 2rem;
+    bottom: 30rem;
+    border-radius: 5%;
+}
+.aboutUsA{
+    
+    grid-area: h3;
+    
+}
+.aboutUsA h3{
+    font-size: 4rem;
+    
+    color: rgba(255, 255, 255, 0.83);
+    position: relative;
+    left: 500px;
+    top: 7rem;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+}
+.imagen1{
+    grid-area: imagen1;
+    border: solid 2px rgba(255, 255, 255, 0.693);
+    position: relative;
+    top: 100px;
+    left: 140px;
+    width: 500px;
+    border-radius: 7px;
+}
+.imagen1 img{
+    height: 600px;
+    width: 496px;
+    border-radius: 6px;
+
+}
+.texto1{
+    grid-area: texto1;
+    border: solid 5px rgba(44, 80, 114, 0.796);
+    height: 600px;
+    width: 500px;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.898);
+    border-radius: 7px;
+    position: relative;
+    left: 20px;
+    top: 100px;
+    line-height: 1.3;
+}
+.texto1 p{
+    padding: 2.6rem;
+}
+.imagen2{
+    grid-area: imagen2;
+    border: solid 3px rgba(255, 255, 255, 0.693);
+    position: relative;
+    left: 20px;
+    top: 160px;
+    width: 500px;
+    border-radius: 6px;
+}
+.imagen2 img{
+    height: 600px;
+    width: 495px;
+    border-radius: 10px;
+}
+.texto2{
+    grid-area: texto2;
+    border: solid 5px rgba(44, 80, 114, 0.796);
+    height: 600px;
+    width: 500px;
+    font-size: 2.3rem;
+    color: rgba(255, 255, 255, 0.898);
+    border-radius: 7px;
+    position: relative;
+    left: 140px;
+    line-height: 1.3;
+    top: 160px;
+}
+.texto2 p{
+    padding: 2.6rem;
+}
+
+/* FOOTER */
+.footer{
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    font-size: 1.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto auto auto auto;
+    grid-template-areas: 
+        "home . ."
+        "travel . ."
+        "about . ."
+        "contact . ."
+        "helpp  parrafo ."
+    ;
+}
+.pf{
+    grid-area: parrafo;
+}
+.pf p{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.3rem;
+}
+.pHome{
+    grid-area: home;
+    color: rgb(255, 255, 255);
+}
+.pTravel{
+    grid-area: travel;
+    color: rgb(255, 255, 255);
+}
+.pAbout{
+    grid-area: about;
+    color: rgb(255, 255, 255);
+}
+.pContact{
+    grid-area: contact;
+    color: rgb(255, 255, 255);
+}
+.pHelp{
+    grid-area: helpp;
+    color: rgb(255, 255, 255);
+}
+
+/* MEDIA QUIRES ABOUT US*/
+
+@media(max-width: 320px){
+
+    .gridContainer{
+        height: 140px;
+        padding: 4px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4rem auto;
+        grid-template-areas: 
+            "logo"
+            "nav"
+        ;
+        align-items: center;
+        justify-items: center;
+        background-color: #391847;
+    }
+    .logo{
+        grid-area: logo;
+    }
+    .menu{
+        grid-area: nav;
+    }
+    .menu ul{
+        list-style: none;
+    }
+    .menu li{
+        display: inline-block;
+        padding: 0 1rem;
+    }
+    .menu a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .logo img{
+        width: 200px;
+    }
+    /*SECTION 1*/
+.containerAbout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10rem auto auto auto 1fr;
+    grid-template-areas: 
+        "h3 h3"
+        "texto1 texto1"
+        "texto2 texto2"
+        "texto3 texto3"
+        "imagen1 imagen2"
+        "titulo1 titulo2"
+    ;
+}
+
+.imagenAbout img{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    
+}
+.imagenAbout p{
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.919);
+    background-color: rgba(26, 26, 26, 0.583);
+    position: absolute;
+    text-align: center;
+    left: 25%;
+    padding: 2rem;
+    bottom: 30rem;
+    border-radius: 5%;
+}
+
+.imagen1 img{
+    width: 80%;
+    position: relative;
+    left: 5.8rem;
+}
+.imagen2 img{
+    width: 80%;
+    position: relative;
+    left: 5.8rem;
+}
+.imagen1{ 
+    grid-area: imagen1; 
+    /* border: solid 1px red; */
+    width: 180px;
+    margin: 2rem;
+    position: relative;
+    right: 6.7rem;
+}
+.imagen2{
+    grid-area: imagen2;
+    /* border: solid 1px red; */
+    width: 180px;
+    margin: 2rem;
+    position: relative;
+    right: 13.7rem;
+}
+.texto1{
+    grid-area: texto1;
+    border: solid 2px black;
+    border-radius: 4px;
+    width: 300px;
+    margin: 1rem;
+}
+.texto2{
+    grid-area: texto2;
+    border: solid 2px black;
+    border-radius: 4px;
+    width: 300px;
+    margin: 1rem;
+}
+.texto3{
+    grid-area: texto3;
+    border: solid 2px black;
+    border-radius: 4px;
+    width: 300px;
+    margin: 1rem;
+}
+.aboutUsA {
+    grid-area: h3;
+
+}
+.aboutUsA p{
+    font-size: 13rem;
+    padding: 10px;
+    margin: 2rem;
+}
+.aboutUsA h3{
+    position: relative;
+    left: 1.8rem;
+    font-size: 3rem;
+    padding: 1.1rem;
+    margin-top: 3rem;
+}
+p{
+    font-size: 1.4rem;
+    margin: 2rem;
+}
+.titulo1 p{
+    font-size: 1rem;
+    /* border: 1.5px solid black; */
+    border-radius: 3.5px;
+    position: relative;
+    left: 1rem;
+    text-align: center;
+    width: 70px;
+}
+.titulo2 p{
+    font-size: 1rem;
+    /* border: 1.5px solid rgb(0, 0, 0); */
+    position: relative;
+    left: 1rem;
+    text-align: center;
+    border-radius: 3.5px;
+    width: 70px;
+}
+.titulo1{
+    width: 100%;
+    /* border: solid 1px red; */
+    text-align: center;
+    grid-area: titulo1; 
+}
+.titulo2{
+    /* border: solid 1px red; */
+    width: 100%;
+    text-align: center;
+    grid-area: titulo2;
+    position: relative;
+    right: 4.4rem;
+}
+
+/* FOOTER */
+.footer{
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    font-size: 1.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto auto auto auto;
+    grid-template-areas: 
+        "home . ."
+        "travel . ."
+        "about . ."
+        "contact . ."
+        "helpp  parrafo ."
+    ;
+}
+.pf{
+    grid-area: parrafo;
+}
+.pf p{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.3rem;
+}
+.pHome{
+    grid-area: home;
+    color: rgb(255, 255, 255);
+}
+.pTravel{
+    grid-area: travel;
+    color: rgb(255, 255, 255);
+}
+.pAbout{
+    grid-area: about;
+    color: rgb(255, 255, 255);
+}
+.pContact{
+    grid-area: contact;
+    color: rgb(255, 255, 255);
+}
+.pHelp{
+    grid-area: helpp;
+    color: rgb(255, 255, 255);
+}
+}

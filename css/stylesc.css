@@ -1,0 +1,38 @@
+/* PAGINA INDEX */
+/* FOOTER */
+.footer {
+  background-color: black;
+  display: grid;
+  /* border: solid 1px red; */
+  height: 150px;
+  font-size: 1.4rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "home . ." "travel . ." "about h6 ." "contact . ." "helpp  parrafo ."; }
+  .footer .pHome {
+    grid-area: home;
+    color: white; }
+  .footer .pTravel {
+    grid-area: travel;
+    color: white; }
+  .footer .pAbout {
+    grid-area: about;
+    color: white; }
+  .footer .pContact {
+    grid-area: contact;
+    color: white; }
+  .footer .pHelp {
+    grid-area: helpp;
+    color: white; }
+  .footer .ache6 {
+    grid-area: h6;
+    color: white;
+    text-align: center;
+    font-size: 1.3rem; }
+  .footer .pf {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    bottom: 1.3rem;
+    grid-area: parrafo; }
