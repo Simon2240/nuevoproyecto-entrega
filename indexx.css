@@ -17,6 +17,9 @@ body {
 }
 
 /* Menu INDEX*/
+main{
+    overflow: hidden;
+}
 .gridContainer {
     padding: 4px;
     height: 80px;
@@ -98,7 +101,7 @@ body {
 }
 
 .slider img {
-    width: 150px;
+    width: 500px;
     height: 600px;
     border-radius: 4px;
 }
@@ -163,17 +166,21 @@ body {
     top: 65px;
     border-radius: 7px;
 }
-.imagenn1:hover{
+.contenedor1:hover{
     transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
 }
 .imagenn2:hover{
     transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
 }
 .imagenn3:hover{
     transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
 }
 .imagenn4:hover{
     transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
 }
 
 .imagenn2 img{
@@ -329,7 +336,7 @@ body {
 /*VENDER VIAJES*/
 
 .contenidoPromociones {
-    background-image: url("../imagenes/inviernoashe.jpg");
+    /* background-image: url("./imagenes/inviernoashe.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
@@ -363,7 +370,7 @@ body {
 .imagenPromocion img {
     width: 520px;
     height: 260px;
-    opacity: 0.5;
+    opacity: 0.4;
     margin-left: 40rem;
     border-radius: 2%;
     position: relative;
@@ -374,6 +381,7 @@ body {
 
 .imagenPromocion:hover {
     transform: scale(1.04);
+    transition: all 0.5s ease-in-out;
 }
 
 /* .botonn{
@@ -495,16 +503,14 @@ body {
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
         height: 810px;
+        
     }
     
     /* Menu INDEX*/
     .gridContainer {
         padding: 4px;
         height: 200px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-rows: 4rem;
-        align-items: center;
+        width: 100%;
         background-color: #183247;
     }
     
@@ -539,6 +545,7 @@ body {
     /*SECTION 1 inicio*/
     
     .carousel-item {
+
         position: relative;
     }
     
@@ -555,6 +562,9 @@ body {
         bottom: 22rem;
         border-radius: 5%;
     }
+    .carousel-inner{
+        width: 303px;
+    }
     
     
     
@@ -563,6 +573,7 @@ body {
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
         height: 2100px;
+        width: 303px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5fr);
@@ -577,22 +588,16 @@ body {
     
     .slider {
         grid-area: slider;
-        width: 100px;
+        width: 250px;
         height: 140px;
         position: relative;
-
         top: 160px;
     }
     
-    .slider img {
+    .slider img{
         width: 150px;
-        height: 600px;
+        height: 100px;
         border-radius: 4px;
-    }
-    .carousel-item{
-        /* width: 700px;
-        position: relative;
-        right: 400px; */
     }
     .sobreTexto1{
         color: rgba(255, 255, 255, 0.912);
@@ -654,18 +659,6 @@ body {
         left:  20px;
         top: 406px;
         border-radius: 7px;
-    }
-    .imagenn1:hover{
-        transform: scale(1.03);
-    }
-    .imagenn2:hover{
-        transform: scale(1.03);
-    }
-    .imagenn3:hover{
-        transform: scale(1.03);
-    }
-    .imagenn4:hover{
-        transform: scale(1.03);
     }
     
     .imagenn2 img{
@@ -844,15 +837,14 @@ body {
     /*VENDER VIAJES*/
     
     .contenidoPromociones {
-        background-image: url("../imagenes/inviernoashe.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         align-items: center;
         padding: 5rem;
         height: 700px;
+        width: 303px;
     
     }
-    
     .titlePromocion {
         /* grid-column: 1/6; */
         color: rgb(255, 255, 255);
@@ -1035,14 +1027,15 @@ body {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
+        height: 810px;
+        
     }
     
     /* Menu INDEX*/
     .gridContainer {
         padding: 4px;
-        width: 304px;
-        height: 140px;
-        display: inline-block;
+        height: 200px;
+        width: 320px;
         background-color: #183247;
     }
     
@@ -1052,50 +1045,50 @@ body {
     
     .menu li {
         display: inline-block;
-        font-size: 2rem;
+        padding: 0 1rem;
         position: relative;
-        width: 80px;
-        height: 1px;
-        top: -10px;
-        left: 20px;
-
+        top: 150px;
+        right: 100px;
         
     }
     
     .menu a {
         text-decoration: none;
         color: rgba(255, 255, 255, 0.857);
-        font-size:10px;
+        font-size: 1.5rem;
         font-weight: 600;
     }
     
     .logo img {
-        width: 180px;
-        height: 70px;
+        width: 230px;
+        height: 74px;
         position: relative;
-        left: 55px;
-        top: -8px;
+        top: 16.7px;
+        left: 37px;
     }
     
     /*SECTION 1 inicio*/
     
     .carousel-item {
+
         position: relative;
-        width: 304px;
-        height: 300px;
     }
     
     .carousel-item p {
         font-style: italic;
-        font-size: 1.3rem;
+        font-size: 3rem;
         font-weight: 600;
         color: rgba(255, 255, 255, 0.919);
         background-color: rgba(26, 26, 26, 0.583);
         position: absolute;
         text-align: center;
-        left: 28%;
-        bottom: 110px;
+        left: 10%;
+        padding: 2rem;
+        bottom: 22rem;
         border-radius: 5%;
+    }
+    .carousel-inner{
+        width: 503px;
     }
     
     
@@ -1104,7 +1097,8 @@ body {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 1700px;
+        height: 2100px;
+        width: 303px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5fr);
@@ -1122,21 +1116,20 @@ body {
         width: 500px;
         height: 140px;
         position: relative;
-
-        top: 60px;
+        top: 160px;
     }
     
-    .slider img {
+    .slider img{
         width: 150px;
-        height: 600px;
+        height: 200px;
         border-radius: 4px;
     }
     .sobreTexto1{
         color: rgba(255, 255, 255, 0.912);
         position: relative;
         left: 77px;
-        bottom: 800px;
-        font-size: 2rem;
+        bottom: 660px;
+        font-size: 2.3rem;
         width: 160px;
         
     }
@@ -1147,10 +1140,10 @@ body {
     .sobreTexto2{
         color: white;
         position: relative;
-        left: 77px;
-        bottom: 250px;
-        font-size: 2rem;
-        width: 160px;
+        bottom: 366px;
+        left: 75px;
+        font-size: 2.3rem;
+        width: 180px;
     }
     .sobreTexto2 p{
         background-color: rgba(26, 26, 26, 0.583);
@@ -1159,10 +1152,10 @@ body {
     .sobreTexto3{
         color: white;
         position: relative;
-        left: 100px;
-        bottom: 30px;
-        font-size: 2rem;
-        width: 110px;
+        bottom: 100px;
+        left: 98px;
+        font-size: 2.3rem;
+        width: 130px;
     }
     .sobreTexto3 p{
         background-color: rgba(26, 26, 26, 0.583);
@@ -1172,10 +1165,10 @@ body {
     .sobreTexto4{
         color:white;
         position: relative;
-        left: 50px;
-        bottom: 710px;
-        font-size: 2rem;
-        width: 210px;
+        left: 40px;
+        bottom: 1190px;
+        font-size: 2.3rem;
+        width: 240px;
     }
     .sobreTexto4 p{
         background-color: rgba(26, 26, 26, 0.583);
@@ -1186,48 +1179,47 @@ body {
     
     .imagenn1 img {
         width: 280px;
-        height: 220px;
+        height: 280px;
         position: relative;
-        left:  13px;
-        top: 296px;
+        left:  20px;
+        top: 406px;
         border-radius: 7px;
-    }  
+    }
     
     .imagenn2 img{
         width: 280px;
-        height: 220px;
+        height: 280px;
         position: relative;
-        left:  13px;
-        top: 250px;
+        left:  20px;
+        top: 320px;
         border-radius: 7px;
     }
     
     .imagenn3 img {
         width: 280px;
-        height: 220px;
+        height: 280px;
         position: relative;
-        left:  13px;
-        top: 280px;
+        left:  20px;
+        top: 240px;
         border-radius: 7px;
     }
     
     .imagenn4 img {
         width: 280px;
-        height: 220px;
+        height: 280px;
         position: relative;
-        left:  13px;
-        top: 230px;
+        left: 19px;
+        top: 200px;
         border-radius: 7px;
     
     }
     
     
     
-    /* VIAJE SEGURO */
+    
     
     .viajeSeguro {
-        width: 305px;
-        height: 1740px;
+        height: 1540px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8fr);
@@ -1252,37 +1244,38 @@ body {
     }
     
     .safe {
+        font-size: 3.4rem;
         /* border: solid 1px red; */
         grid-area: travel;
         color: white;
         position: relative;
         right: 10px;
-        top: -20px;
+        top: 20px;
     
     }
     .safe h2{
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
     
     .p{
         /* border: solid 1px red; */
-        width: 1px;
-        font-size: 2px;
+        width: 2px;
         position: relative;
-        right: 15px;
-        width: 250px;
-        top: 50px;
+        right: 10px;
+        width: 300px;
+        top: 9rem;
+        font-size: 10px;
         grid-area: p;
     }
     
     .imagen1 img {
-        width: 270px;
+        width: 300px;
         height: 180px;
         /* border: solid 1px red; */
         grid-area: personabarbijo;
         border-radius: 10px;
         position: relative;
-        left: -335px;
+        left: -330px;
         top: 410px;
     }
     .p1 {
@@ -1290,9 +1283,8 @@ body {
         grid-area: p1;
         text-align: center;
         position: relative;
-        right: 15px;
-        width: 250px;
-        top: 265px;
+        right: 20px;
+        top: 300px;
     }
     
     .p {
@@ -1302,14 +1294,14 @@ body {
     }
     
     .imagen2 img {
-        width: 280px;
+        width: 300px;
         height: 180px;
         /* border: solid 1px red; */
         grid-area: limpiandoavion;
         border-radius: 10px;
         position: relative;
-        left: -649px;
-        top: 850px;
+        left: -640px;
+        top: 830px;
     }
     
     /* .imagen2:hover{
@@ -1323,7 +1315,7 @@ body {
         text-align: center;
         position: relative;
         right: 640px;
-        bottom: 400px;
+        bottom: 220px;
         width: 300px;
     }
     
@@ -1348,8 +1340,8 @@ body {
         text-align: center;
         grid-area: p3;
         position: relative;
-        top: 630px;
-        right: 28px;
+        top: 60px;
+        right: 320px;
         width: 300px;
     
     }
@@ -1359,28 +1351,25 @@ body {
         background: rgb(44, 8, 61);
         background: radial-gradient(circle, rgba(44, 8, 61, 1) 0%, rgba(36, 11, 110, 1) 49%, rgba(44, 8, 61, 1) 100%);
         padding: 3.5rem;
-        width: 305px;
     }
     
     .misDescuentos {
         color: white;
-        font-size: 10px;
+        font-size: 1.4rem;
         text-align: center;
-        position: relative;
     }
     
     /*VENDER VIAJES*/
     
     .contenidoPromociones {
-        background-image: url("../imagenes/inviernoashe.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         align-items: center;
         padding: 5rem;
-        height: 350px;
+        height: 700px;
+        width: 303px;
     
     }
-    
     .titlePromocion {
         /* grid-column: 1/6; */
         color: rgb(255, 255, 255);
@@ -1388,12 +1377,12 @@ body {
     }
     
     .titlePromocion h3 {
-        font-size: 1.7rem;
+        font-size: 2.3rem;
         padding: 0 2rem;
         padding-top: 2rem;
         width: 270px;
         position: relative;
-        right: 5rem;
+        right: 3.4rem;
         bottom: 4.4rem;
     
     }
@@ -1401,12 +1390,12 @@ body {
     .promocion {
         color: rgb(253, 253, 253);
         padding: 0 4rem;
-        font-size: 1.2rem;
+        font-size: 2rem;
         line-height: 1.5;
         display: inline-block;
         width: 349px;
         position: relative;
-        right: 6.4rem;
+        right: 5rem;
         bottom: 3.9rem;
 
     
@@ -1435,7 +1424,7 @@ body {
     /* FOOTER*/
     
     .footer{
-        width: 305px;
+        
         background-color: rgb(0, 0, 0);
         display: grid;
         font-size: 1.4rem;
@@ -1452,13 +1441,9 @@ body {
     }
     .ache6{
         position: relative;
-        right: -10px;
-        bottom: -50px;
-        width: 236px;
-        font-size: 10px;
-    }
-    .ache6 h6{
-        font-size: 5px;
+        right: -25px;
+        bottom: 30px;
+        width: 256px;
     }
     .pf{
         grid-area: parrafo;
@@ -1468,8 +1453,8 @@ body {
         text-align: center;
         font-size: 1rem;
         position: relative;
-        width: 230px;
-        bottom: 100px;
+        width: 270px;
+        bottom: 4.5rem;
         left: 15px;
     }
     .pHome{
@@ -1492,22 +1477,21 @@ body {
         color: rgb(255, 255, 255);
         font-size: 12px;
         position: relative;
-        bottom: 1rem;
+        bottom: 2.3rem;
     }
     .pHelp{
         grid-area: helpp;
         color: rgb(255, 255, 255);
         font-size: 12px;
         position: relative;
-        bottom: 2rem;
+        bottom: 3rem;
     }
     /*ABOUT US */
     .aboutUsT{
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 630px;
-        width: 305px;
+        height: 1320px;
     }
     .aboutUsTravel{
         margin: 2rem;
@@ -1524,21 +1508,21 @@ body {
     
     }
     .aboutUsTravel h2{
-        font-size: 1.6rem;
+        font-size: 2.1rem;
         color: white;
         grid-area: h2;
         width: 340px;
         position: relative;
-        right: 30px;
+        right: 50px;
     }
     .aboutUsTravel p{
-        font-size: 9px;
+        font-size: 20px;
         grid-area: p;
         color: white;
         line-height: 1.7;
-        width: 260px;
+        width: 300px;
         position: relative;
-        right: 20px;
+        right: 35px;
     }
     .aboutUsTravel img{
         grid-area: image;
@@ -1547,18 +1531,18 @@ body {
         top: 2rem;
     }
     .aboutUsTravel img{
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         position: relative;
-        left: -20px;
+        left: -4rem;
         top: 2.5rem;
     }
     
     .p2{
         grid-area: p2;
         position: relative;
-        right: 40px;
-        top: -80px;
+        right: 50px;
+        top: -60px;
     }
 }
 @media (max-width: 868px){

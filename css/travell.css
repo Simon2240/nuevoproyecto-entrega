@@ -12,11 +12,12 @@ body{
     background: rgb(25, 27, 28);
     background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
     height: 810px;
-    height: 810px;
 }
 
 /* HEADER INDEX*/
-
+main{
+    overflow: hidden;
+}
 .gridContainer{
     padding: 4px;
     height: 80px;
@@ -246,7 +247,6 @@ body{
 }
 .tyform{
     height: 770px;
-    background-image: url("../imagenes/chilling.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
