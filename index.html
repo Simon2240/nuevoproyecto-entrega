@@ -11,6 +11,11 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384- 50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7e5b2d153f.js" 
+    crossorigin="anonymous"></script>
+    <script defer src="main.js"></script>
     <link rel="stylesheet" href="./indexx.css">
     <link rel="stylesheet" href="css/stylesc.css">
     <title>StartTravel</title>
@@ -19,25 +24,32 @@
 <body>
 
     <!--     HEADER INDEX  -->
-
-    <header>
-        <nav class="gridContainer">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="./imagenes/starttravelazulado.png" alt="starttravelairways">
-                </a>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./paginas/travell.html">Travel</a></li>
-                    <li><a href="./paginas/aboutuss.html">About Us</a></li>
-                    <li><a href="./paginas/contactt.html">Contact Us</a></li>
-                    <li><a href="./paginas/helpp.html">Help</a></li>
-                </ul>
-            </div>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo nav-link"><img src="./imagenes/starttravelazulado.png" alt=""></a>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a href="./index.html" class="nav-menu-link nav-link">Home</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="./paginas/travell.html" class="nav-menu-link nav-link">Travel</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="./paginas/aboutuss.html" class="nav-menu-link nav-link">About Us</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="./paginas/contactt.html" class="nav-menu-link nav-link">Contact Us   </a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="./paginas/helpp.html" class="nav-menu-link nav-link nav-menu-link_active">Help</a>
+                </li>
+            </ul>
         </nav>
     </header>
+    
     <main>
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -74,75 +86,88 @@
                 </button>
             </div>
         </div>
-            <section class="cartas">
+        <section class="cartas">
 
-                <div class="slider">
-                    <img src="./imagenes/pasaport.jpg" alt="pasaporte">
+            <div class="slide animate" id="slide-02">
+                <div class="image-rotator">
+                    <img src="./imagenes/india.jpg" alt="india" />
+                    <img src="./imagenes/maldivas.jpg" alt="maldivas" />
+                    <a href="">
+                        <img src="./imagenes/pasaport.jpg" alt="pasaporte" />
+                    </a>
+                    <img class="logoImg" src="./imagenes/starttravelazulado.png" alt="starttravelazulado">
                 </div>
+            </div>
 
-                <div class="contenedor1">
-                    <div class="imagenn1">
+            <div class="contenedor1">
+                <div class="imagenn1">
+                    <a href="./paginas/travell.html">
                         <img src="./imagenes/hotel.jpg" alt="foto1">
-                    </div>
+                    </a>
+                    
                 </div>
+            </div>
 
-                <div class="contenedor2">
-                    <div class="imagenn2">
+            <div class="contenedor2">
+                <div class="imagenn2">
+                    <a href="./paginas/travell.html">
                         <img src="./imagenes/habitacionhotel.jpg" alt="foto2">
-                    </div>
-                </div>
-
-                <div class="contenedor3">
-                    <div class="imagenn3">
-                        <img src="./imagenes/equipaje.jpg" alt="foto3">
-                    </div>
-                </div>
-                <div class="contenedor4">
-                    <div class="imagenn4">
-                        <img src="./imagenes/foodd.jpg" alt="foto4">
-                    </div>
-                </div>
-
-                <div class="sobreTexto1">
-                    <p>The best stays in luxury hotels.</p>
-                </div>
-                <div class="sobreTexto2">
-                    <p>Prepare your trip!</p>
-                </div>
-                <div class="sobreTexto3">
-                    <p>Services 24 hours a day.</p>
-                </div>
-                <div class="sobreTexto4">
-                    <p>With services chosen as the best par excellence</p>
-                </div>
-
-
-            </section>
-
-            <!--     CONTENIDO PROMOCIONES  -->
-
-            <section class="contenidoPromociones" style="background-image: url(./imagenes/inviernoashe.jpg);">
-                <div class="titlePromocion">
-                    <h3>Do you want to travel around the world? Take a look!</h3>
-                </div>
-                <div class="promocion">
-                    <p>If you want to travel abroad and also enjoy a premium service chosen as the excellence of air travel,
-                        this is the opportunity to do it! Paris? USA? Dubai? Right here! Just by clicking on the image that
-                        appears on the screen below or by going to "Travel" that appears in our main menu, you will be
-                        redirected to our page with exclusive travel services 365 days a year! What are you waiting for?
-                        Make
-                        your reservation online right now! More than a plane trip, an unforgettable experience!
-                    </p>
-                </div>
-                <div class="imagenPromocion">
-                    <a href="./travell.html">
-                        <img src="./imagenes/niños-nieve.jpg" alt="pendejos">
-                        <!-- <img src="./imagenes/avionback.jpg" alt="avionback"> -->
                     </a>
                 </div>
-                <!-- <div class="botonn">
-                <button type="button" class="btn btn-warning">Let´s go!</button> -->
-        </div>
+            </div>
+
+            <div class="contenedor3">
+                <div class="imagenn3">
+                    <a href="./paginas/travell.html">
+                        <img src="./imagenes/equipaje.jpg" alt="foto3">
+                    </a>
+                </div>
+            </div>
+            <div class="contenedor4">
+                <div class="imagenn4">
+                    <a href="./paginas/travell.html">
+                        <img src="./imagenes/foodd.jpg" alt="foto4">
+                    </a>
+                </div>
+            </div>
+
+            <div class="sobreTexto1">
+                <p>The best stays in luxury hotels.</p>
+            </div>
+            <div class="sobreTexto2">
+                <p>Prepare your trip!</p>
+            </div>
+            <div class="sobreTexto3">
+                <p>Services 24 hours a day.</p>
+            </div>
+            <div class="sobreTexto4">
+                <p>With services chosen as the best par excellence</p>
+            </div>
+
+
+        </section>
+
+        <!--     CONTENIDO PROMOCIONES  -->
+
+        <section class="contenidoPromociones" >
+            <div class="titlePromocion">
+                <h3>Do you want to travel around the world? Take a look!</h3>
+            </div>
+            <div class="promocion">
+                <p>If you want to travel abroad and also enjoy a premium service chosen as the excellence of air travel,
+                    this is the opportunity to do it! Paris? USA? Dubai? Right here! Just by clicking on the image that
+                    appears on the screen below or by going to "Travel" that appears in our main menu, you will be
+                    redirected to our page with exclusive travel services 365 days a year! What are you waiting for?
+                    Make
+                    your reservation online right now! More than a plane trip, an unforgettable experience!
+                </p>
+            </div>
+            <div class="imagenPromocion">
+                <a href="./paginas/travell.html">
+                    <img src="./imagenes/niños-nieve.jpg" alt="pendejos">
+                </a>
+            </div>
+            </div>
         </section>
 
 
@@ -150,7 +175,7 @@
 
         <section class="descuentos">
             <div class="misDescuentos">
-                <h3>DESCUENTOS DE HASTA 50%</h3>
+                <h3>OFFERS 50%</h3>
                 <p>Take advantage of these crazy discounts just for this crazy season!
                 </p>
             </div>
@@ -163,7 +188,8 @@
             </div>
             <div class="p">
                 <p>You can count on us to travel safely, we are one of the most experienced global airlines during the
-                    COVID-19 crisis. So that there are no problems with your trip, please follow these instructions to the
+                    COVID-19 crisis. So that there are no problems with your trip, please follow these instructions to
+                    the
                     letter.
                 </p>
             </div>
@@ -171,23 +197,28 @@
                 <img src="../imagenes/pasajera-con-barbijo-.jpg" alt="personabarbijo">
             </div>
             <div class="p1">
-                <p>One of the most important and mandatory things to take into account when traveling with our airlines is
+                <p>One of the most important and mandatory things to take into account when traveling with our airlines
+                    is
                     going to be the use of a chinstrap the time you are inside our aircraft.</p>
             </div>
             <div class="imagen2">
                 <img src="./imagenes/limpiezaavion2.jpg" alt="limpiandoavion">
             </div>
             <div class="pe2">
-                <p> Another of the measures carried out by our StartTravel airline is the sanitation of the entire aircraft
-                    including each of its rooms and seats. And thus prevent there from being any possible case of Covid 19.
+                <p> Another of the measures carried out by our StartTravel airline is the sanitation of the entire
+                    aircraft
+                    including each of its rooms and seats. And thus prevent there from being any possible case of Covid
+                    19.
                 </p>
             </div>
             <div class="imagen3">
                 <img src="./imagenes/hisopado.jpg" alt="azafatasconbarbijo">
             </div>
             <div class="p3">
-                <p>Under strict rules of the world health organization, any person who wants to travel abroad and with our
-                    high-quality services will have to be vaccinated with the Covid 19 vaccine and its respective doses.</p>
+                <p>Under strict rules of the world health organization, any person who wants to travel abroad and with
+                    our
+                    high-quality services will have to be vaccinated with the Covid 19 vaccine and its respective doses.
+                </p>
             </div>
         </section>
 
@@ -198,19 +229,22 @@
                 <h2>Want to know more about us?</h2>
                 <p>
                     StartTravel is proud to be one of the youngest airlines flying to all six continents and, thanks to
-                    customer response to our offers, also one of the fastest growing airlines in the world. We connect more
-                    than 160 destinations in the world daily, with a fleet of state-of-the-art aircraft and an unbeatable
+                    customer response to our offers, also one of the fastest growing airlines in the world. We connect
+                    more
+                    than 160 destinations in the world daily, with a fleet of state-of-the-art aircraft and an
+                    unbeatable
                     level of service from our home and logistics center, the 5-star Virginia International Airport, in
                     Virginia, USA.
                     Today, travel consists of a mix of short, medium and long-haul segments with the highest number of
                     travelers ever recorded. This is one of the best brands globally as an airline company today. </p>
-                <a href="./aboutuss.html">
+                <a href="./paginas/aboutuss.html">
                     <img src="./imagenes/azafatass.jpg" alt="azafatas" width="600px" height="370px""> 
                     </a>
                 <div class=" p2">
                     <p class="text1">DO YOU WANT TO KNOW MORE ABOUT US?</p>
 
-                    <p class="text2">If you want to know more about us, you just have to click on the image on the left!</p>
+                    <p class="text2">If you want to know more about us, you just have to click on the image on the left!
+                    </p>
             </div>
 
             </div>
@@ -219,31 +253,22 @@
     <!--     FOOTER   -->
 
     <footer class="footer">
-        <div class="pHome">
-            <p>Home</p>
+        <div class="home">
+            <p>
+                Home
+                Travel
+                About Us
+                Contact Us
+                Help
+            </p>
         </div>
-        <div class="pTravel">
-            <p>Travel</p>
-        </div>
-        <div class="pAbout">
-            <p>About Us</p>
-        </div>
-        <div class="pContact">
-            <p>Contact Us</p>
-        </div>
-        <div class="pHelp">
-            <p>Help</p>
-        </div>
-        <div class="ache6">
-            <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio provident ea reprehenderit
-                exercitationem soluta rem doloribus mollitia officiis recusandae, odio fuga fugit corrupti laudantium
-                sit expedita corporis nostrum ad! Deleniti!</h6>
-        </div>
+
         <div class="pf">
             <p>StartTravel AirWays all rights reserved
                 Travel safely and comfortably thanks to our services with our number 1 airline in the world.</p>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>

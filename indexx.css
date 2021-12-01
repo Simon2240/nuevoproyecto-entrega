@@ -9,51 +9,145 @@ html {
 }
 
 body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background: #070809;
     background: rgb(25, 27, 28);
     background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-    height: 810px;
 }
 
 /* Menu INDEX*/
-main{
+main {
     overflow: hidden;
 }
-.gridContainer {
-    padding: 4px;
-    height: 80px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 4rem;
-    align-items: center;
+
+.header {
     background-color: #183247;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
 }
 
-.menu ul {
-    list-style: none;
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 992px;
+    margin: 0 auto;
 }
 
-.menu li {
-    display: inline-block;
-    padding: 0 1rem;
-    position: relative;
-    top: 20px;
-}
-
-.menu a {
+.nav-link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.857);
-    font-size: 1.5rem;
-    font-weight: 600;
+    color: white;
 }
 
-.logo img {
-    width: 250px;
-    height: 74px;
-    position: relative;
-    top: 14.7px;
+.logo img{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+    height: 75px;
+    width: 300px;
 }
+
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    transition: 0.5s;
+}
+
+/* TOGGLE */
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+        z-index: 99999;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #83c5f7;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
 
 /*SECTION 1 inicio*/
 
@@ -91,34 +185,78 @@ main{
 
 }
 
-.slider {
+#slide-02 {
     grid-area: slider;
-    width: 500px;
-    height: 140px;
     position: relative;
-    left: 80px;
-    top: 60px;
+    left: 110px;
+    bottom: -4rem;
 }
 
-.slider img {
-    width: 500px;
+#slide-02 .image-rotator {
+    position: relative;
+    max-width: 450px;
     height: 600px;
-    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgba(95, 129, 160, 0.295);
 }
-.sobreTexto1{
+
+#slide-02.animate .image-rotator img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 3px;
+    animation: imgRotator 18s ease-in-out infinite;
+}
+
+#slide-02.animate .image-rotator img:nth-child(1) {
+    animation-delay: -4s;
+}
+
+#slide-02.animate .image-rotator img:nth-child(2) {
+    animation-delay: 7s;
+}
+
+#slide-02.animate .image-rotator img:nth-child(3) {
+    animation-delay: -8s;
+}
+
+
+@keyframes imgRotator {
+    0% {
+        opacity: 0;
+    }
+
+    17%,
+    33% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+.sobreTexto1 {
     color: rgba(255, 255, 255, 0.912);
     position: relative;
-    left: 604px;
+    left: 610px;
     bottom: 400px;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     width: 310px;
-    
+
 }
-.sobreTexto1 p{
+
+.sobreTexto1 p {
     background-color: rgba(26, 26, 26, 0.583);
     border-radius: 6px;
 }
-.sobreTexto2{
+
+.sobreTexto2 {
     color: white;
     position: relative;
     bottom: 97px;
@@ -126,11 +264,13 @@ main{
     font-size: 2.3rem;
     width: 180px;
 }
-.sobreTexto2 p{
+
+.sobreTexto2 p {
     background-color: rgba(26, 26, 26, 0.583);
     border-radius: 6px;
 }
-.sobreTexto3{
+
+.sobreTexto3 {
     color: white;
     position: relative;
     bottom: 100px;
@@ -138,20 +278,22 @@ main{
     font-size: 2.3rem;
     width: 130px;
 }
-.sobreTexto3 p{
+
+.sobreTexto3 p {
     background-color: rgba(26, 26, 26, 0.583);
     border-radius: 6px;
 }
 
-.sobreTexto4{
-    color:white;
+.sobreTexto4 {
+    color: white;
     position: relative;
     left: 1000px;
     bottom: 490px;
     font-size: 2.3rem;
     width: 240px;
 }
-.sobreTexto4 p{
+
+.sobreTexto4 p {
     background-color: rgba(26, 26, 26, 0.583);
     border-radius: 6px;
 }
@@ -166,24 +308,28 @@ main{
     top: 65px;
     border-radius: 7px;
 }
-.contenedor1:hover{
-    transform: scale(1.03);
-    transition: all 0.3s ease-in-out;
-}
-.imagenn2:hover{
-    transform: scale(1.03);
-    transition: all 0.3s ease-in-out;
-}
-.imagenn3:hover{
-    transform: scale(1.03);
-    transition: all 0.3s ease-in-out;
-}
-.imagenn4:hover{
+
+.contenedor1:hover {
     transform: scale(1.03);
     transition: all 0.3s ease-in-out;
 }
 
-.imagenn2 img{
+.imagenn2:hover {
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+.imagenn3:hover {
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+.imagenn4:hover {
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+.imagenn2 img {
     width: 330px;
     height: 280px;
     position: relative;
@@ -239,12 +385,12 @@ main{
 
 .safe {
     font-size: 4rem;
-    /* border: solid 1px red; */
     grid-area: travel;
     color: white;
 
 }
-.safe h2{
+
+.safe h2 {
     font-size: 2.4rem;
 }
 
@@ -259,7 +405,6 @@ main{
 .imagen1 img {
     width: 100%;
     height: 100%;
-    /* border: solid 1px red; */
     grid-area: personabarbijo;
     border-radius: 10px;
 }
@@ -336,7 +481,7 @@ main{
 /*VENDER VIAJES*/
 
 .contenidoPromociones {
-    /* background-image: url("./imagenes/inviernoashe.jpg"); */
+    background-image: url("./imagenes/inviernoashe.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
@@ -396,97 +541,102 @@ main{
 }  */
 /* FOOTER*/
 
-/* .footer{
+.footer {
     background-color: rgb(0, 0, 0);
+    height: 130px;
     display: grid;
     font-size: 1.4rem;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr auto auto auto auto;
-    grid-template-areas: 
-        "home . ."
-        "travel . ."
-        "about . ."
-        "contact . ."
-        "helpp  parrafo ."
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "paginas"
+        "startt"
     ;
-    
+
 }
-.pf{
-    grid-area: parrafo;
+
+.pf {
+    grid-area: startt;
 }
-.pf p{
+.home {
+    grid-area: paginas;
+}
+
+.home p{
+    position: relative;
+    top: -100px;
+    left: -570px;
+    color: white;
+}
+
+
+
+.pf p {
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 1.3rem;
+    position: relative;
+    bottom: -20px;
+    left: 100px;
 }
-.pHome{
-    grid-area: home;
-    color: rgb(255, 255, 255);
-}
-.pTravel{
-    grid-area: travel;
-    color: rgb(255, 255, 255);
-}
-.pAbout{
-    grid-area: about;
-    color: rgb(255, 255, 255);
-}
-.pContact{
-    grid-area: contact;
-    color: rgb(255, 255, 255);
-}
-.pHelp{
-    grid-area: helpp;
-    color: rgb(255, 255, 255);
-} */
+
+
+
 /*ABOUT US */
-.aboutUsT{
+.aboutUsT {
     background: #070809;
     background: rgb(25, 27, 28);
     background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
     height: 720px;
 }
-.aboutUsTravel{
+
+.aboutUsTravel {
     margin: 2rem;
     padding: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto auto;
-    grid-template-areas: 
+    grid-template-areas:
         "h2 h2"
         "p p"
         "image p2"
     ;
 
 }
-.aboutUsTravel h2{
+
+.aboutUsTravel h2 {
     padding: 2rem;
     font-size: 3.4rem;
     color: white;
     grid-area: h2;
 }
-.aboutUsTravel p{
+
+.aboutUsTravel p {
     font-size: 20px;
     grid-area: p;
     color: white;
     line-height: 1.7;
 }
-.aboutUsTravel img:hover{
+
+.aboutUsTravel img:hover {
     grid-area: image;
     padding-top: 1.2rem;
-    transform: scale(1.1);
+    transform: scale(0.9);
+    transition-duration: 0.5s;
 }
-.aboutUsTravel img{
+
+.aboutUsTravel img {
     position: relative;
     left: 4rem;
     top: 2rem;
 }
 
-.p2{
+.p2 {
     grid-area: p2;
     padding: 12.4rem 4rem;
 
 }
+
 .hr1 {
     color: black;
     border: solid 1px black;
@@ -496,96 +646,85 @@ main{
 /* MEDIA QUIRES INDEX*/
 
 @media(max-width: 320px) {
-    
-    body {
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-        background: #070809;
-        background: rgb(25, 27, 28);
-        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 810px;
-        
-    }
-    
-    /* Menu INDEX*/
-    .gridContainer {
-        padding: 4px;
-        height: 200px;
-        width: 100%;
-        background-color: #183247;
-    }
-    
-    .menu ul {
-        list-style: none;
-    }
-    
-    .menu li {
-        display: inline-block;
-        padding: 0 1rem;
-        position: relative;
-        top: 150px;
-        right: 100px;
-        
-    }
-    
-    .menu a {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.857);
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-    
-    .logo img {
-        width: 230px;
-        height: 74px;
-        position: relative;
-        top: 16.7px;
-        left: 37px;
-    }
-    
-    /*SECTION 1 inicio*/
-    
-    .carousel-item {
 
-        position: relative;
+/*    #slide-02{
+     display:none;
+   }
+ */
+    /* Menu INDEX*/
+    .header {
+        height: 60px;
+        z-index: 99999;
     }
-    
-    .carousel-item p {
-        font-style: italic;
-        font-size: 3rem;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.919);
-        background-color: rgba(26, 26, 26, 0.583);
-        position: absolute;
-        text-align: center;
-        left: 10%;
-        padding: 2rem;
-        bottom: 22rem;
-        border-radius: 5%;
+
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
     }
-    .carousel-inner{
-        width: 303px;
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
     }
-    
-    
-    
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #83c5f7;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /*SECTION 1 inicio*/
+
+
+
+
+
     .cartas {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 2100px;
-        width: 303px;
+        height: 700px !important;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5fr);
         grid-template-areas:
             "slider"
-            "contenedor1" 
+            "contenedor1"
             "contenedor2"
-            "contenedor3" 
+            "contenedor3"
             "contenedor4"
-    
+
     }
-    
+
     .slider {
         grid-area: slider;
         width: 250px;
@@ -593,26 +732,29 @@ main{
         position: relative;
         top: 160px;
     }
-    
-    .slider img{
+
+    .slider img {
         width: 150px;
         height: 100px;
         border-radius: 4px;
     }
-    .sobreTexto1{
+
+    .sobreTexto1 {
         color: rgba(255, 255, 255, 0.912);
         position: relative;
         left: 77px;
         bottom: 660px;
         font-size: 2.3rem;
         width: 160px;
-        
+
     }
-    .sobreTexto1 p{
+
+    .sobreTexto1 p {
         background-color: rgba(26, 26, 26, 0.583);
         border-radius: 6px;
     }
-    .sobreTexto2{
+
+    .sobreTexto2 {
         color: white;
         position: relative;
         bottom: 366px;
@@ -620,11 +762,13 @@ main{
         font-size: 2.3rem;
         width: 180px;
     }
-    .sobreTexto2 p{
+
+    .sobreTexto2 p {
         background-color: rgba(26, 26, 26, 0.583);
         border-radius: 6px;
     }
-    .sobreTexto3{
+
+    .sobreTexto3 {
         color: white;
         position: relative;
         bottom: 100px;
@@ -632,53 +776,55 @@ main{
         font-size: 2.3rem;
         width: 130px;
     }
-    .sobreTexto3 p{
+
+    .sobreTexto3 p {
         background-color: rgba(26, 26, 26, 0.583);
         border-radius: 6px;
     }
-    
-    .sobreTexto4{
-        color:white;
+
+    .sobreTexto4 {
+        color: white;
         position: relative;
         left: 40px;
         bottom: 1190px;
         font-size: 2.3rem;
         width: 240px;
     }
-    .sobreTexto4 p{
+
+    .sobreTexto4 p {
         background-color: rgba(26, 26, 26, 0.583);
         border-radius: 6px;
     }
-    
-    
-    
+
+
+
     .imagenn1 img {
         width: 280px;
         height: 280px;
         position: relative;
-        left:  20px;
+        left: 20px;
         top: 406px;
         border-radius: 7px;
     }
-    
-    .imagenn2 img{
+
+    .imagenn2 img {
         width: 280px;
         height: 280px;
         position: relative;
-        left:  20px;
+        left: 20px;
         top: 320px;
         border-radius: 7px;
     }
-    
+
     .imagenn3 img {
         width: 280px;
         height: 280px;
         position: relative;
-        left:  20px;
+        left: 20px;
         top: 240px;
         border-radius: 7px;
     }
-    
+
     .imagenn4 img {
         width: 280px;
         height: 280px;
@@ -686,13 +832,13 @@ main{
         left: 19px;
         top: 200px;
         border-radius: 7px;
-    
+
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     .viajeSeguro {
         height: 1540px;
         display: grid;
@@ -701,9 +847,9 @@ main{
         grid-template-areas:
             "travel travel"
             "p p"
-            "personabarbijo"  
+            "personabarbijo"
             "p1"
-            "limpiandoavion" 
+            "limpiandoavion"
             "pe2"
             "azafatas"
             "p3"
@@ -713,11 +859,11 @@ main{
         align-items: center;
         background-color: rgba(0, 0, 0, 0.892);
     }
-    
+
     .viajeSeguro p {
         color: white;
     }
-    
+
     .safe {
         font-size: 3.4rem;
         /* border: solid 1px red; */
@@ -726,13 +872,14 @@ main{
         position: relative;
         right: 10px;
         top: 20px;
-    
+
     }
-    .safe h2{
+
+    .safe h2 {
         font-size: 2.4rem;
     }
-    
-    .p{
+
+    .p {
         /* border: solid 1px red; */
         width: 2px;
         position: relative;
@@ -742,7 +889,7 @@ main{
         font-size: 10px;
         grid-area: p;
     }
-    
+
     .imagen1 img {
         width: 300px;
         height: 180px;
@@ -753,6 +900,7 @@ main{
         left: -330px;
         top: 410px;
     }
+
     .p1 {
         font-size: 2rem;
         grid-area: p1;
@@ -761,13 +909,13 @@ main{
         right: 20px;
         top: 300px;
     }
-    
+
     .p {
         font-size: 2rem;
         grid-area: p;
         text-align: center;
     }
-    
+
     .imagen2 img {
         width: 300px;
         height: 180px;
@@ -778,12 +926,12 @@ main{
         left: -640px;
         top: 830px;
     }
-    
+
     /* .imagen2:hover{
         padding: 20px;
         transform: scale(2,);
     } */
-    
+
     .pe2 {
         font-size: 2rem;
         grid-area: pe2;
@@ -793,7 +941,7 @@ main{
         bottom: 220px;
         width: 300px;
     }
-    
+
     .imagen3 img {
         width: 300px;
         height: 180px;
@@ -804,7 +952,7 @@ main{
         right: 330px;
         top: 1200px;
     }
-    
+
     /* .imagen3:hover{
         padding: 20px;
         transform: scale(2,);
@@ -818,50 +966,51 @@ main{
         top: 60px;
         right: 320px;
         width: 300px;
-    
+
     }
-    
+
     /*DESCUENTOSSS*/
     .descuentos {
         background: rgb(44, 8, 61);
         background: radial-gradient(circle, rgba(44, 8, 61, 1) 0%, rgba(36, 11, 110, 1) 49%, rgba(44, 8, 61, 1) 100%);
         padding: 3.5rem;
+        width: 150vw;
     }
-    
+
     .misDescuentos {
         color: white;
         font-size: 1.4rem;
         text-align: center;
     }
-    
+
     /*VENDER VIAJES*/
-    
+
     .contenidoPromociones {
         background-repeat: no-repeat;
         background-size: cover;
         align-items: center;
         padding: 5rem;
         height: 700px;
-        width: 303px;
-    
+
     }
+
     .titlePromocion {
         /* grid-column: 1/6; */
         color: rgb(255, 255, 255);
         margin: 2rem;
     }
-    
+
     .titlePromocion h3 {
         font-size: 2.3rem;
         padding: 0 2rem;
         padding-top: 2rem;
-        width: 270px;
+        width: 100px;
         position: relative;
         right: 3.4rem;
         bottom: 4.4rem;
-    
+
     }
-    
+
     .promocion {
         color: rgb(253, 253, 253);
         padding: 0 4rem;
@@ -873,10 +1022,10 @@ main{
         right: 5rem;
         bottom: 3.9rem;
 
-    
-    
+
+
     }
-    
+
     .imagenPromocion img {
         width: 270px;
         height: 240px;
@@ -885,7 +1034,7 @@ main{
         position: relative;
         right: 72.3rem;
     }
-    
+
     /* .botonn{
         position: relative;
         left: 49%;
@@ -897,33 +1046,36 @@ main{
         height: 200%;
     }  */
     /* FOOTER*/
-    
-    .footer{
-        
+
+    .footer {
+
         background-color: rgb(0, 0, 0);
         display: grid;
         font-size: 1.4rem;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
-        grid-template-areas: 
+        grid-template-areas:
             "home"
             "travel"
             "about"
             "contact"
             "helpp  parrafo"
         ;
-        
+
     }
-    .ache6{
+
+    .ache6 {
         position: relative;
         right: -25px;
         bottom: 30px;
         width: 256px;
     }
-    .pf{
+
+    .pf {
         grid-area: parrafo;
     }
-    .pf p{
+
+    .pf p {
         color: rgb(255, 255, 255);
         text-align: center;
         font-size: 1rem;
@@ -932,57 +1084,66 @@ main{
         bottom: 4.5rem;
         left: 15px;
     }
-    .pHome{
+
+    .pHome {
         grid-area: home;
         font-size: 12px;
         color: rgb(255, 255, 255);
     }
-    .pTravel{
+
+    .pTravel {
         grid-area: travel;
         color: rgb(255, 255, 255);
         font-size: 12px;
     }
-    .pAbout{
+
+    .pAbout {
         grid-area: about;
         color: rgb(255, 255, 255);
         font-size: 12px;
     }
-    .pContact{
+
+    .pContact {
         grid-area: contact;
         color: rgb(255, 255, 255);
         font-size: 12px;
         position: relative;
         bottom: 2.3rem;
     }
-    .pHelp{
+
+    .pHelp {
         grid-area: helpp;
         color: rgb(255, 255, 255);
         font-size: 12px;
         position: relative;
         bottom: 3rem;
     }
+
+
     /*ABOUT US */
-    .aboutUsT{
+    .aboutUsT {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
         height: 1320px;
     }
-    .aboutUsTravel{
+
+    .aboutUsTravel {
         margin: 2rem;
         padding: 3rem;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4fr);
-        grid-template-areas: 
+        grid-template-areas:
             "h2"
             "p"
             "image"
             "p2"
         ;
-    
+
     }
-    .aboutUsTravel h2{
+
+    .aboutUsTravel h2 {
         font-size: 2.1rem;
         color: white;
         grid-area: h2;
@@ -990,7 +1151,8 @@ main{
         position: relative;
         right: 50px;
     }
-    .aboutUsTravel p{
+
+    .aboutUsTravel p {
         font-size: 20px;
         grid-area: p;
         color: white;
@@ -999,21 +1161,23 @@ main{
         position: relative;
         right: 35px;
     }
-    .aboutUsTravel img{
+
+    .aboutUsTravel img {
         grid-area: image;
         position: relative;
         right: 1020px;
         top: 2rem;
     }
-    .aboutUsTravel img{
+
+    .aboutUsTravel img {
         width: 300px;
         height: 300px;
         position: relative;
         left: -4rem;
         top: 2.5rem;
     }
-    
-    .p2{
+
+    .p2 {
         grid-area: p2;
         position: relative;
         right: 50px;
@@ -1021,538 +1185,7 @@ main{
     }
 }
 
-@media (max-width: 634px){
-    body {
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-        background: #070809;
-        background: rgb(25, 27, 28);
-        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 810px;
-        
-    }
-    
-    /* Menu INDEX*/
-    .gridContainer {
-        padding: 4px;
-        height: 200px;
-        width: 320px;
-        background-color: #183247;
-    }
-    
-    .menu ul {
-        list-style: none;
-    }
-    
-    .menu li {
-        display: inline-block;
-        padding: 0 1rem;
-        position: relative;
-        top: 150px;
-        right: 100px;
-        
-    }
-    
-    .menu a {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.857);
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-    
-    .logo img {
-        width: 230px;
-        height: 74px;
-        position: relative;
-        top: 16.7px;
-        left: 37px;
-    }
-    
-    /*SECTION 1 inicio*/
-    
-    .carousel-item {
-
-        position: relative;
-    }
-    
-    .carousel-item p {
-        font-style: italic;
-        font-size: 3rem;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.919);
-        background-color: rgba(26, 26, 26, 0.583);
-        position: absolute;
-        text-align: center;
-        left: 10%;
-        padding: 2rem;
-        bottom: 22rem;
-        border-radius: 5%;
-    }
-    .carousel-inner{
-        width: 503px;
-    }
-    
-    
-    
-    .cartas {
-        background: #070809;
-        background: rgb(25, 27, 28);
-        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 2100px;
-        width: 303px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5fr);
-        grid-template-areas:
-            "slider"
-            "contenedor1" 
-            "contenedor2"
-            "contenedor3" 
-            "contenedor4"
-    
-    }
-    
-    .slider {
-        grid-area: slider;
-        width: 500px;
-        height: 140px;
-        position: relative;
-        top: 160px;
-    }
-    
-    .slider img{
-        width: 150px;
-        height: 200px;
-        border-radius: 4px;
-    }
-    .sobreTexto1{
-        color: rgba(255, 255, 255, 0.912);
-        position: relative;
-        left: 77px;
-        bottom: 660px;
-        font-size: 2.3rem;
-        width: 160px;
-        
-    }
-    .sobreTexto1 p{
-        background-color: rgba(26, 26, 26, 0.583);
-        border-radius: 6px;
-    }
-    .sobreTexto2{
-        color: white;
-        position: relative;
-        bottom: 366px;
-        left: 75px;
-        font-size: 2.3rem;
-        width: 180px;
-    }
-    .sobreTexto2 p{
-        background-color: rgba(26, 26, 26, 0.583);
-        border-radius: 6px;
-    }
-    .sobreTexto3{
-        color: white;
-        position: relative;
-        bottom: 100px;
-        left: 98px;
-        font-size: 2.3rem;
-        width: 130px;
-    }
-    .sobreTexto3 p{
-        background-color: rgba(26, 26, 26, 0.583);
-        border-radius: 6px;
-    }
-    
-    .sobreTexto4{
-        color:white;
-        position: relative;
-        left: 40px;
-        bottom: 1190px;
-        font-size: 2.3rem;
-        width: 240px;
-    }
-    .sobreTexto4 p{
-        background-color: rgba(26, 26, 26, 0.583);
-        border-radius: 6px;
-    }
-    
-    
-    
-    .imagenn1 img {
-        width: 280px;
-        height: 280px;
-        position: relative;
-        left:  20px;
-        top: 406px;
-        border-radius: 7px;
-    }
-    
-    .imagenn2 img{
-        width: 280px;
-        height: 280px;
-        position: relative;
-        left:  20px;
-        top: 320px;
-        border-radius: 7px;
-    }
-    
-    .imagenn3 img {
-        width: 280px;
-        height: 280px;
-        position: relative;
-        left:  20px;
-        top: 240px;
-        border-radius: 7px;
-    }
-    
-    .imagenn4 img {
-        width: 280px;
-        height: 280px;
-        position: relative;
-        left: 19px;
-        top: 200px;
-        border-radius: 7px;
-    
-    }
-    
-    
-    
-    
-    
-    .viajeSeguro {
-        height: 1540px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8fr);
-        grid-template-areas:
-            "travel travel"
-            "p p"
-            "personabarbijo"  
-            "p1"
-            "limpiandoavion" 
-            "pe2"
-            "azafatas"
-            "p3"
-        ;
-        padding: 1rem 2rem;
-        justify-items: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.892);
-    }
-    
-    .viajeSeguro p {
-        color: white;
-    }
-    
-    .safe {
-        font-size: 3.4rem;
-        /* border: solid 1px red; */
-        grid-area: travel;
-        color: white;
-        position: relative;
-        right: 10px;
-        top: 20px;
-    
-    }
-    .safe h2{
-        font-size: 2.4rem;
-    }
-    
-    .p{
-        /* border: solid 1px red; */
-        width: 2px;
-        position: relative;
-        right: 10px;
-        width: 300px;
-        top: 9rem;
-        font-size: 10px;
-        grid-area: p;
-    }
-    
-    .imagen1 img {
-        width: 300px;
-        height: 180px;
-        /* border: solid 1px red; */
-        grid-area: personabarbijo;
-        border-radius: 10px;
-        position: relative;
-        left: -330px;
-        top: 410px;
-    }
-    .p1 {
-        font-size: 2rem;
-        grid-area: p1;
-        text-align: center;
-        position: relative;
-        right: 20px;
-        top: 300px;
-    }
-    
-    .p {
-        font-size: 2rem;
-        grid-area: p;
-        text-align: center;
-    }
-    
-    .imagen2 img {
-        width: 300px;
-        height: 180px;
-        /* border: solid 1px red; */
-        grid-area: limpiandoavion;
-        border-radius: 10px;
-        position: relative;
-        left: -640px;
-        top: 830px;
-    }
-    
-    /* .imagen2:hover{
-        padding: 20px;
-        transform: scale(2,);
-    } */
-    
-    .pe2 {
-        font-size: 2rem;
-        grid-area: pe2;
-        text-align: center;
-        position: relative;
-        right: 640px;
-        bottom: 220px;
-        width: 300px;
-    }
-    
-    .imagen3 img {
-        width: 300px;
-        height: 180px;
-        /*  border: solid 1px red; */
-        grid-area: azafatas;
-        border-radius: 10px;
-        position: relative;
-        right: 330px;
-        top: 1200px;
-    }
-    
-    /* .imagen3:hover{
-        padding: 20px;
-        transform: scale(2,);
-    
-    } */
-    .p3 {
-        font-size: 2rem;
-        text-align: center;
-        grid-area: p3;
-        position: relative;
-        top: 60px;
-        right: 320px;
-        width: 300px;
-    
-    }
-    
-    /*DESCUENTOSSS*/
-    .descuentos {
-        background: rgb(44, 8, 61);
-        background: radial-gradient(circle, rgba(44, 8, 61, 1) 0%, rgba(36, 11, 110, 1) 49%, rgba(44, 8, 61, 1) 100%);
-        padding: 3.5rem;
-    }
-    
-    .misDescuentos {
-        color: white;
-        font-size: 1.4rem;
-        text-align: center;
-    }
-    
-    /*VENDER VIAJES*/
-    
-    .contenidoPromociones {
-        background-repeat: no-repeat;
-        background-size: cover;
-        align-items: center;
-        padding: 5rem;
-        height: 700px;
-        width: 303px;
-    
-    }
-    .titlePromocion {
-        /* grid-column: 1/6; */
-        color: rgb(255, 255, 255);
-        margin: 2rem;
-    }
-    
-    .titlePromocion h3 {
-        font-size: 2.3rem;
-        padding: 0 2rem;
-        padding-top: 2rem;
-        width: 270px;
-        position: relative;
-        right: 3.4rem;
-        bottom: 4.4rem;
-    
-    }
-    
-    .promocion {
-        color: rgb(253, 253, 253);
-        padding: 0 4rem;
-        font-size: 2rem;
-        line-height: 1.5;
-        display: inline-block;
-        width: 349px;
-        position: relative;
-        right: 5rem;
-        bottom: 3.9rem;
-
-    
-    
-    }
-    
-    .imagenPromocion img {
-        width: 270px;
-        height: 240px;
-        opacity: 0.5;
-        border-radius: 2%;
-        position: relative;
-        right: 72.3rem;
-    }
-    
-    /* .botonn{
-        position: relative;
-        left: 49%;
-        bottom: 10px;
-    
-    }
-    .botonn button{
-        width: 100;
-        height: 200%;
-    }  */
-    /* FOOTER*/
-    
-    .footer{
-        
-        background-color: rgb(0, 0, 0);
-        display: grid;
-        font-size: 1.4rem;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
-        grid-template-areas: 
-            "home"
-            "travel"
-            "about"
-            "contact"
-            "helpp  parrafo"
-        ;
-        
-    }
-    .ache6{
-        position: relative;
-        right: -25px;
-        bottom: 30px;
-        width: 256px;
-    }
-    .pf{
-        grid-area: parrafo;
-    }
-    .pf p{
-        color: rgb(255, 255, 255);
-        text-align: center;
-        font-size: 1rem;
-        position: relative;
-        width: 270px;
-        bottom: 4.5rem;
-        left: 15px;
-    }
-    .pHome{
-        grid-area: home;
-        font-size: 12px;
-        color: rgb(255, 255, 255);
-    }
-    .pTravel{
-        grid-area: travel;
-        color: rgb(255, 255, 255);
-        font-size: 12px;
-    }
-    .pAbout{
-        grid-area: about;
-        color: rgb(255, 255, 255);
-        font-size: 12px;
-    }
-    .pContact{
-        grid-area: contact;
-        color: rgb(255, 255, 255);
-        font-size: 12px;
-        position: relative;
-        bottom: 2.3rem;
-    }
-    .pHelp{
-        grid-area: helpp;
-        color: rgb(255, 255, 255);
-        font-size: 12px;
-        position: relative;
-        bottom: 3rem;
-    }
-    /*ABOUT US */
-    .aboutUsT{
-        background: #070809;
-        background: rgb(25, 27, 28);
-        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 1320px;
-    }
-    .aboutUsTravel{
-        margin: 2rem;
-        padding: 3rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4fr);
-        grid-template-areas: 
-            "h2"
-            "p"
-            "image"
-            "p2"
-        ;
-    
-    }
-    .aboutUsTravel h2{
-        font-size: 2.1rem;
-        color: white;
-        grid-area: h2;
-        width: 340px;
-        position: relative;
-        right: 50px;
-    }
-    .aboutUsTravel p{
-        font-size: 20px;
-        grid-area: p;
-        color: white;
-        line-height: 1.7;
-        width: 300px;
-        position: relative;
-        right: 35px;
-    }
-    .aboutUsTravel img{
-        grid-area: image;
-        position: relative;
-        right: 1020px;
-        top: 2rem;
-    }
-    .aboutUsTravel img{
-        width: 300px;
-        height: 300px;
-        position: relative;
-        left: -4rem;
-        top: 2.5rem;
-    }
-    
-    .p2{
-        grid-area: p2;
-        position: relative;
-        right: 50px;
-        top: -60px;
-    }
-}
-@media (max-width: 868px){
-    body {
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-        background: #070809;
-        background: rgb(25, 27, 28);
-        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-    }
-    
+@media (max-width: 634px) {
     /* Menu INDEX*/
     .gridContainer {
         padding: 4px;
@@ -1561,11 +1194,11 @@ main{
         display: inline-block;
         background-color: #183247;
     }
-    
+
     .menu ul {
         list-style: none;
     }
-    
+
     .menu li {
         display: inline-block;
         font-size: 2rem;
@@ -1575,32 +1208,80 @@ main{
         top: -10px;
         left: 20px;
 
-        
+
     }
-    
+
     .menu a {
         text-decoration: none;
         color: rgba(255, 255, 255, 0.857);
-        font-size:10px;
+        font-size: 10px;
         font-weight: 600;
     }
-    
+
     .logo img {
-        width: 150px;
-        height: 70px;
+        width: 250px;
+        height: 60px;
         position: relative;
         left: 55px;
         top: -8px;
     }
-    
+    .header {
+        height: 60px;
+        z-index: 99999;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #83c5f7;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+
     /*SECTION 1 inicio*/
-    
+
     .carousel-item {
         position: relative;
-        width: 304px;
         height: 300px;
     }
-    
+
     .carousel-item p {
         font-style: italic;
         font-size: 1.3rem;
@@ -1609,30 +1290,27 @@ main{
         background-color: rgba(26, 26, 26, 0.583);
         position: absolute;
         text-align: center;
-        left: 28%;
+        left: 44%;
         bottom: 110px;
         border-radius: 5%;
     }
-    
-    
-    
+
+
+
     .cartas {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 1700px;
+        height: 550px;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5fr);
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2fr);
         grid-template-areas:
-            "slider"
-            "contenedor1" 
-            "contenedor2"
-            "contenedor3" 
-            "contenedor4"
-    
+            " slider contenedor1 contenedor2"
+            " slider contenedor3 contenedor4"
+
     }
-    
+
     .slider {
         grid-area: slider;
         width: 500px;
@@ -1641,132 +1319,146 @@ main{
 
         top: 60px;
     }
-    
+
     .slider img {
         width: 150px;
         height: 600px;
         border-radius: 4px;
     }
-    .sobreTexto1{
+    
+    /* SLIDER */
+    #slide-02 {
+        left: 0px;
+    }
+
+    #slide-02 .image-rotator {
+        max-width: 300px;
+        height: 450px;
+        left: 50px
+    }
+
+    .sobreTexto1 {
         color: rgba(255, 255, 255, 0.912);
         position: relative;
-        left: 77px;
-        bottom: 800px;
+        left: 657px;
+        bottom: 270px;
         font-size: 2rem;
         width: 160px;
-        
+
     }
-    .sobreTexto1 p{
+
+    .sobreTexto1 p {
         background-color: rgba(26, 26, 26, 0.583);
         border-radius: 6px;
     }
-    .sobreTexto2{
+
+    .sobreTexto2 {
         color: white;
         position: relative;
-        left: 77px;
-        bottom: 250px;
-        font-size: 2rem;
-        width: 160px;
-    }
-    .sobreTexto2 p{
-        background-color: rgba(26, 26, 26, 0.583);
-        border-radius: 6px;
-    }
-    .sobreTexto3{
-        color: white;
-        position: relative;
-        left: 100px;
+        left: 95px;
         bottom: 30px;
+        font-size: 2rem;
+        width: 160px;
+    }
+
+    .sobreTexto2 p {
+        background-color: rgba(26, 26, 26, 0.583);
+        border-radius: 6px;
+    }
+
+    .sobreTexto3 {
+        color: white;
+        position: relative;
+        left: 40px;
+        bottom: 40px;
         font-size: 2rem;
         width: 110px;
     }
-    .sobreTexto3 p{
+
+    .sobreTexto3 p {
         background-color: rgba(26, 26, 26, 0.583);
         border-radius: 6px;
     }
-    
-    .sobreTexto4{
-        color:white;
+
+    .sobreTexto4 {
+        color: white;
         position: relative;
-        left: 50px;
-        bottom: 710px;
+        left: 380px;
+        bottom: 355px;
         font-size: 2rem;
         width: 210px;
     }
-    .sobreTexto4 p{
+
+    .sobreTexto4 p {
         background-color: rgba(26, 26, 26, 0.583);
         border-radius: 6px;
     }
-    
-    
-    
+
+
+
     .imagenn1 img {
-        width: 280px;
-        height: 220px;
+        width: 230px;
+        height: 190px;
         position: relative;
-        left:  13px;
-        top: 296px;
-        border-radius: 7px;
-    }  
-    
-    .imagenn2 img{
-        width: 280px;
-        height: 220px;
-        position: relative;
-        left:  13px;
-        top: 250px;
+        left: 53px;
+        bottom: 300px;
         border-radius: 7px;
     }
-    
+
+    .imagenn2 img {
+        width: 230px;
+        height: 190px;
+        position: relative;
+        right: 25px;
+        top: 64px;
+        border-radius: 7px;
+    }
+
     .imagenn3 img {
-        width: 280px;
-        height: 220px;
+        width: 230px;
+        height: 190px;
         position: relative;
-        left:  13px;
-        top: 280px;
+        left: 52px;
+        top: 90px;
         border-radius: 7px;
     }
-    
+
     .imagenn4 img {
-        width: 280px;
-        height: 220px;
+        width: 230px;
+        height: 190px;
         position: relative;
-        left:  13px;
-        top: 230px;
+        right: 23px;
+        top: 90px;
         border-radius: 7px;
-    
+
     }
-    
-    
-    
+
+
+
     /* VIAJE SEGURO */
-    
+
     .viajeSeguro {
-        width: 305px;
-        height: 1740px;
+        height: 910px;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8fr);
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(5fr);
         grid-template-areas:
-            "travel travel"
-            "p p"
-            "personabarbijo"  
-            "p1"
-            "limpiandoavion" 
-            "pe2"
-            "azafatas"
-            "p3"
+        "travel travel"
+        "p p"
+        "personabarbijo  p1"
+        "limpiandoavion  p2"
+        "azafatas  p3"
         ;
         padding: 1rem 2rem;
         justify-items: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.892);
     }
-    
+
     .viajeSeguro p {
         color: white;
     }
-    
+
     .safe {
         /* border: solid 1px red; */
         grid-area: travel;
@@ -1774,23 +1466,24 @@ main{
         position: relative;
         right: 10px;
         top: -20px;
-    
+        position: relative;
+        left: 130px;
     }
-    .safe h2{
-        font-size: 2rem;
+
+    .safe h2 {
+        font-size: 3rem;
     }
-    
-    .p{
+
+    .p {
         /* border: solid 1px red; */
-        width: 1px;
         font-size: 2px;
         position: relative;
-        right: 15px;
-        width: 250px;
-        top: 50px;
+        left: 100px;
+        bottom: 30px;
+        width: 650px;
         grid-area: p;
     }
-    
+
     .imagen1 img {
         width: 270px;
         height: 180px;
@@ -1798,25 +1491,25 @@ main{
         grid-area: personabarbijo;
         border-radius: 10px;
         position: relative;
-        left: -335px;
-        top: 410px;
+        right: 645px;
+        top: 250px;
     }
+
     .p1 {
         font-size: 2rem;
         grid-area: p1;
         text-align: center;
         position: relative;
-        right: 15px;
-        width: 250px;
-        top: 265px;
+        left: 30px;
+        width: 350px;
     }
-    
+
     .p {
         font-size: 2rem;
         grid-area: p;
         text-align: center;
     }
-    
+
     .imagen2 img {
         width: 280px;
         height: 180px;
@@ -1824,36 +1517,36 @@ main{
         grid-area: limpiandoavion;
         border-radius: 10px;
         position: relative;
-        left: -649px;
-        top: 850px;
+        left: -930px;
+        top: 490px;
     }
-    
+
     /* .imagen2:hover{
         padding: 20px;
         transform: scale(2,);
     } */
-    
+
     .pe2 {
         font-size: 2rem;
         grid-area: pe2;
         text-align: center;
         position: relative;
-        right: 640px;
-        bottom: 400px;
-        width: 300px;
+        right: 900px;
+        bottom: 230px;
+        width: 350px;
     }
-    
+
     .imagen3 img {
-        width: 300px;
+        width: 280px;
         height: 180px;
         /*  border: solid 1px red; */
         grid-area: azafatas;
         border-radius: 10px;
         position: relative;
-        right: 330px;
-        top: 1200px;
+        right: 1258px;
+        top: 730px;
     }
-    
+
     /* .imagen3:hover{
         padding: 20px;
         transform: scale(2,);
@@ -1864,71 +1557,70 @@ main{
         text-align: center;
         grid-area: p3;
         position: relative;
-        top: 630px;
-        right: 28px;
-        width: 300px;
-    
+        top: 250px;
+        left: 20px;
+        width: 350px;
+
     }
-    
+
     /*DESCUENTOSSS*/
     .descuentos {
         background: rgb(44, 8, 61);
         background: radial-gradient(circle, rgba(44, 8, 61, 1) 0%, rgba(36, 11, 110, 1) 49%, rgba(44, 8, 61, 1) 100%);
         padding: 3.5rem;
-        width: 305px;
     }
-    
+
     .misDescuentos {
         color: white;
         font-size: 10px;
         text-align: center;
         position: relative;
     }
-    
+
     /*VENDER VIAJES*/
-    
+
     .contenidoPromociones {
         background-image: url("../imagenes/inviernoashe.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         align-items: center;
-        padding: 5rem;
-        height: 350px;
-    
+        padding: 0rem;
+        height: 100vh;
+        width: 100%;
+        padding: 0;
+        background-image: url("./imagenes/inviernoashe.jpg");
+        background-size: cover;
     }
-    
+
     .titlePromocion {
         /* grid-column: 1/6; */
         color: rgb(255, 255, 255);
         margin: 2rem;
     }
-    
+
     .titlePromocion h3 {
-        font-size: 1.7rem;
-        padding: 0 2rem;
+        font-size: 2rem;
+        padding: 0 0rem;
         padding-top: 2rem;
-        width: 270px;
         position: relative;
-        right: 5rem;
         bottom: 4.4rem;
-    
+        width: 100%;
     }
-    
-    .promocion {
+
+    .promocion p{
         color: rgb(253, 253, 253);
-        padding: 0 4rem;
-        font-size: 1.2rem;
+        padding: 0 0rem;
+        font-size: 1.5rem;
         line-height: 1.5;
         display: inline-block;
-        width: 349px;
         position: relative;
-        right: 6.4rem;
-        bottom: 3.9rem;
-
-    
-    
+        right: 0rem;
+        margin-left: 0rem;
+        bottom: 0rem;
+        width: 120%;
+        text-align: center;
     }
-    
+
     .imagenPromocion img {
         width: 270px;
         height: 240px;
@@ -1937,7 +1629,7 @@ main{
         position: relative;
         right: 72.3rem;
     }
-    
+
     /* .botonn{
         position: relative;
         left: 49%;
@@ -1949,131 +1641,732 @@ main{
         height: 200%;
     }  */
     /* FOOTER*/
-    
-    .footer{
-        width: 305px;
+
+    .footer {
         background-color: rgb(0, 0, 0);
         display: grid;
         font-size: 1.4rem;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
-        grid-template-areas: 
+        grid-template-areas:
             "home"
             "travel"
             "about"
             "contact"
             "helpp  parrafo"
         ;
-        
+
     }
-    .ache6{
+
+    .ache6 {
         position: relative;
-        right: -10px;
-        bottom: -50px;
-        width: 236px;
-        font-size: 10px;
+        right: 0px;
+        bottom: -100px;
     }
-    .ache6 h6{
-        font-size: 5px;
+
+    .ache6 h6 {
+        font-size: 9px;
     }
-    .pf{
+
+    .pf {
         grid-area: parrafo;
     }
-    .pf p{
+
+    .pf p {
         color: rgb(255, 255, 255);
         text-align: center;
         font-size: 1rem;
         position: relative;
-        width: 230px;
+        width: 260px;
         bottom: 100px;
         left: 15px;
     }
-    .pHome{
+
+    .pHome {
         grid-area: home;
         font-size: 12px;
         color: rgb(255, 255, 255);
     }
-    .pTravel{
+
+    .pTravel {
         grid-area: travel;
         color: rgb(255, 255, 255);
         font-size: 12px;
     }
-    .pAbout{
+
+    .pAbout {
         grid-area: about;
         color: rgb(255, 255, 255);
         font-size: 12px;
     }
-    .pContact{
+
+    .pContact {
         grid-area: contact;
         color: rgb(255, 255, 255);
         font-size: 12px;
         position: relative;
         bottom: 1rem;
     }
-    .pHelp{
+
+    .pHelp {
         grid-area: helpp;
         color: rgb(255, 255, 255);
         font-size: 12px;
         position: relative;
         bottom: 2rem;
     }
+
     /*ABOUT US */
-    .aboutUsT{
+    .aboutUsT {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
         height: 630px;
-        width: 305px;
     }
-    .aboutUsTravel{
+
+    .aboutUsTravel {
         margin: 2rem;
         padding: 3rem;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(4fr);
-        grid-template-areas: 
+        grid-template-areas:
             "h2"
             "p"
-            "image"
-            "p2"
+            "image p2"
         ;
-    
+
     }
-    .aboutUsTravel h2{
-        font-size: 1.6rem;
+
+    .aboutUsTravel h2 {
+        font-size: 3rem;
         color: white;
         grid-area: h2;
-        width: 340px;
+        width: 640px;
         position: relative;
         right: 30px;
     }
-    .aboutUsTravel p{
-        font-size: 9px;
+
+    .aboutUsTravel p {
+        font-size: 15px;
         grid-area: p;
         color: white;
         line-height: 1.7;
-        width: 260px;
+        width: 830px;
         position: relative;
         right: 20px;
     }
-    .aboutUsTravel img{
+
+    .aboutUsTravel img {
         grid-area: image;
-        position: relative;
-        right: 1020px;
         top: 2rem;
     }
-    .aboutUsTravel img{
-        width: 250px;
-        height: 250px;
+
+    .aboutUsTravel img {
+        width: 400px;
+        height: 300px;
         position: relative;
         left: -20px;
         top: 2.5rem;
     }
-    
-    .p2{
+
+    .p2 {
         grid-area: p2;
         position: relative;
-        right: 40px;
-        top: -80px;
+        top: 30px;
+    }
+    .p2 p{
+        width: 300px;
+    }
+}
+
+@media (max-width: 868px) {
+
+    /* Menu INDEX*/
+    .gridContainer {
+        padding: 4px;
+        width: 304px;
+        height: 140px;
+        display: inline-block;
+        background-color: #183247;
+    }
+
+    .menu ul {
+        list-style: none;
+    }
+
+    .menu li {
+        display: inline-block;
+        font-size: 2rem;
+        position: relative;
+        width: 80px;
+        height: 1px;
+        top: -10px;
+        left: 20px;
+
+
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.857);
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .logo img {
+        width: 250px;
+        height: 60px;
+        position: relative;
+        left: 55px;
+        top: -8px;
+    }
+    .header {
+        height: 60px;
+        z-index: 99999;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #83c5f7;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /*SECTION 1 inicio*/
+
+    .carousel-item {
+        position: relative;
+        height: 300px;
+    }
+
+    .carousel-item p {
+        font-style: italic;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.919);
+        background-color: rgba(26, 26, 26, 0.583);
+        position: absolute;
+        text-align: center;
+        left: 44%;
+        bottom: 110px;
+        border-radius: 5%;
+    }
+
+
+
+    .cartas {
+        background: #070809;
+        background: rgb(25, 27, 28);
+        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
+        height: 550px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2fr);
+        grid-template-areas:
+            " slider contenedor1 contenedor2"
+            " slider contenedor3 contenedor4"
+
+    }
+
+    .slider {
+        grid-area: slider;
+        width: 500px;
+        height: 140px;
+        position: relative;
+
+        top: 60px;
+    }
+
+    .slider img {
+        width: 150px;
+        height: 600px;
+        border-radius: 4px;
+    }
+    
+    /* SLIDER */
+    #slide-02 {
+        left: 0px;
+    }
+
+    #slide-02 .image-rotator {
+        max-width: 300px;
+        height: 450px;
+        left: 50px
+    }
+
+    .sobreTexto1 {
+        color: rgba(255, 255, 255, 0.912);
+        position: relative;
+        left: 657px;
+        bottom: 270px;
+        font-size: 2rem;
+        width: 160px;
+
+    }
+
+    .sobreTexto1 p {
+        background-color: rgba(26, 26, 26, 0.583);
+        border-radius: 6px;
+    }
+
+    .sobreTexto2 {
+        color: white;
+        position: relative;
+        left: 95px;
+        bottom: 30px;
+        font-size: 2rem;
+        width: 160px;
+    }
+
+    .sobreTexto2 p {
+        background-color: rgba(26, 26, 26, 0.583);
+        border-radius: 6px;
+    }
+
+    .sobreTexto3 {
+        color: white;
+        position: relative;
+        left: 40px;
+        bottom: 40px;
+        font-size: 2rem;
+        width: 110px;
+    }
+
+    .sobreTexto3 p {
+        background-color: rgba(26, 26, 26, 0.583);
+        border-radius: 6px;
+    }
+
+    .sobreTexto4 {
+        color: white;
+        position: relative;
+        left: 380px;
+        bottom: 355px;
+        font-size: 2rem;
+        width: 210px;
+    }
+
+    .sobreTexto4 p {
+        background-color: rgba(26, 26, 26, 0.583);
+        border-radius: 6px;
+    }
+
+
+
+    .imagenn1 img {
+        width: 230px;
+        height: 190px;
+        position: relative;
+        left: 53px;
+        bottom: 300px;
+        border-radius: 7px;
+    }
+
+    .imagenn2 img {
+        width: 230px;
+        height: 190px;
+        position: relative;
+        right: 25px;
+        top: 64px;
+        border-radius: 7px;
+    }
+
+    .imagenn3 img {
+        width: 230px;
+        height: 190px;
+        position: relative;
+        left: 52px;
+        top: 90px;
+        border-radius: 7px;
+    }
+
+    .imagenn4 img {
+        width: 230px;
+        height: 190px;
+        position: relative;
+        right: 23px;
+        top: 90px;
+        border-radius: 7px;
+
+    }
+
+
+
+    /* VIAJE SEGURO */
+
+    .viajeSeguro {
+        height: 910px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(5fr);
+        grid-template-areas:
+        "travel travel"
+        "p p"
+        "personabarbijo  p1"
+        "limpiandoavion  p2"
+        "azafatas  p3"
+        ;
+        padding: 1rem 2rem;
+        justify-items: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.892);
+    }
+
+    .viajeSeguro p {
+        color: white;
+    }
+
+    .safe {
+        /* border: solid 1px red; */
+        grid-area: travel;
+        color: white;
+        position: relative;
+        right: 10px;
+        top: -20px;
+        position: relative;
+        left: 130px;
+    }
+
+    .safe h2 {
+        font-size: 3rem;
+    }
+
+    .p {
+        /* border: solid 1px red; */
+        font-size: 2px;
+        position: relative;
+        left: 100px;
+        bottom: 30px;
+        width: 650px;
+        grid-area: p;
+    }
+
+    .imagen1 img {
+        width: 270px;
+        height: 180px;
+        /* border: solid 1px red; */
+        grid-area: personabarbijo;
+        border-radius: 10px;
+        position: relative;
+        right: 645px;
+        top: 250px;
+    }
+
+    .p1 {
+        font-size: 2rem;
+        grid-area: p1;
+        text-align: center;
+        position: relative;
+        left: 30px;
+        width: 350px;
+    }
+
+    .p {
+        font-size: 2rem;
+        grid-area: p;
+        text-align: center;
+    }
+
+    .imagen2 img {
+        width: 280px;
+        height: 180px;
+        /* border: solid 1px red; */
+        grid-area: limpiandoavion;
+        border-radius: 10px;
+        position: relative;
+        left: -930px;
+        top: 490px;
+    }
+
+    /* .imagen2:hover{
+        padding: 20px;
+        transform: scale(2,);
+    } */
+
+    .pe2 {
+        font-size: 2rem;
+        grid-area: pe2;
+        text-align: center;
+        position: relative;
+        right: 900px;
+        bottom: 230px;
+        width: 350px;
+    }
+
+    .imagen3 img {
+        width: 280px;
+        height: 180px;
+        /*  border: solid 1px red; */
+        grid-area: azafatas;
+        border-radius: 10px;
+        position: relative;
+        right: 1258px;
+        top: 730px;
+    }
+
+    /* .imagen3:hover{
+        padding: 20px;
+        transform: scale(2,);
+    
+    } */
+    .p3 {
+        font-size: 2rem;
+        text-align: center;
+        grid-area: p3;
+        position: relative;
+        top: 250px;
+        left: 20px;
+        width: 350px;
+
+    }
+
+    /*DESCUENTOSSS*/
+    .descuentos {
+        background: rgb(44, 8, 61);
+        background: radial-gradient(circle, rgba(44, 8, 61, 1) 0%, rgba(36, 11, 110, 1) 49%, rgba(44, 8, 61, 1) 100%);
+        padding: 3.5rem;
+    }
+
+    .misDescuentos {
+        color: white;
+        font-size: 10px;
+        text-align: center;
+        position: relative;
+    }
+
+    /*VENDER VIAJES*/
+
+    .contenidoPromociones {
+        background-image: url("../imagenes/inviernoashe.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-items: center;
+        padding: 5rem;
+        height: 350px;
+
+    }
+
+    .titlePromocion {
+        /* grid-column: 1/6; */
+        color: rgb(255, 255, 255);
+        margin: 2rem;
+    }
+
+    .titlePromocion h3 {
+        font-size: 2.4rem;
+        padding: 0 2rem;
+        padding-top: 2rem;
+        position: relative;
+        right: 5rem;
+        bottom: 4.4rem;
+
+    }
+
+    .promocion {
+        color: rgb(253, 253, 253);
+        padding: 0 4rem;
+        font-size: 1.8rem;
+        line-height: 1.5;
+        display: inline-block;
+        position: relative;
+        right: 5.4rem;
+        bottom: 3.9rem;
+    }
+
+    .imagenPromocion img {
+        width: 270px;
+        height: 240px;
+        opacity: 0.5;
+        border-radius: 2%;
+        position: relative;
+        right: 72.3rem;
+    }
+
+    /* .botonn{
+        position: relative;
+        left: 49%;
+        bottom: 10px;
+    
+    }
+    .botonn button{
+        width: 100;
+        height: 200%;
+    }  */
+    /* FOOTER*/
+
+    .footer {
+        background-color: rgb(0, 0, 0);
+        display: grid;
+        font-size: 1.4rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+            "home"
+            "travel"
+            "about"
+            "contact"
+            "helpp  parrafo"
+        ;
+
+    }
+
+    .ache6 {
+        position: relative;
+        right: 0px;
+        bottom: -100px;
+    }
+
+    .ache6 h6 {
+        font-size: 9px;
+    }
+
+    .pf {
+        grid-area: parrafo;
+    }
+
+    .pf p {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 1rem;
+        position: relative;
+        width: 260px;
+        bottom: 100px;
+        left: 15px;
+    }
+
+    .pHome {
+        grid-area: home;
+        font-size: 12px;
+        color: rgb(255, 255, 255);
+    }
+
+    .pTravel {
+        grid-area: travel;
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+    }
+
+    .pAbout {
+        grid-area: about;
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+    }
+
+    .pContact {
+        grid-area: contact;
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+        position: relative;
+        bottom: 1rem;
+    }
+
+    .pHelp {
+        grid-area: helpp;
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+        position: relative;
+        bottom: 2rem;
+    }
+
+    /*ABOUT US */
+    .aboutUsT {
+        background: #070809;
+        background: rgb(25, 27, 28);
+        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
+        height: 630px;
+    }
+
+    .aboutUsTravel {
+        margin: 2rem;
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4fr);
+        grid-template-areas:
+            "h2"
+            "p"
+            "image p2"
+        ;
+
+    }
+
+    .aboutUsTravel h2 {
+        font-size: 3rem;
+        color: white;
+        grid-area: h2;
+        width: 640px;
+        position: relative;
+        right: 30px;
+    }
+
+    .aboutUsTravel p {
+        font-size: 15px;
+        grid-area: p;
+        color: white;
+        line-height: 1.7;
+        width: 830px;
+        position: relative;
+        right: 20px;
+    }
+
+    .aboutUsTravel img {
+        grid-area: image;
+        top: 2rem;
+    }
+
+    .aboutUsTravel img {
+        width: 400px;
+        height: 300px;
+        position: relative;
+        left: -20px;
+        top: 2.5rem;
+    }
+
+    .p2 {
+        grid-area: p2;
+        position: relative;
+        top: 30px;
+    }
+    .p2 p{
+        width: 300px;
     }
 }

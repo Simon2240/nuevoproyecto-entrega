@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     font-size: 62.5%;
 }
-body{
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background: #070809;
     background: rgb(25, 27, 28);
     background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
@@ -15,39 +17,137 @@ body{
 }
 
 /* HEADER INDEX*/
-main{
+main {
     overflow: hidden;
 }
-.gridContainer{
-    padding: 4px;
-    height: 80px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 4rem;
-    align-items: center;
+
+.header {
     background-color: #183247;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
 }
-.menu ul{
-    list-style: none;
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 992px;
+    margin: 0 auto;
 }
-.menu li{
-    display: inline-block;
-    padding: 0 1rem;
-    position: relative;
-    top: 20px;
-}
-.menu a{
+
+.nav-link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.857);
-    font-size: 1.5rem;
-    font-weight: 600;
+    color: white;
 }
-.logo img{
-    width: 250px;
-    height: 74px;
-    position: relative;
-    top: 14.7px;
+
+.logo img {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+    height: 75px;
+    width: 300px;
 }
+
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    transition: 0.5s;
+}
+
+/* TOGGLE */
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+}
+/* MOBILE */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+        z-index: 99999;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #83c5f7;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
 /* SECTION T*/
 
 /* .sectionT{
@@ -55,20 +155,22 @@ main{
     padding: 0px;
     margin: 0%;
 } */
-.imagenTravel1 img{
+.imagenTravel1 img {
     opacity: 0.7;
     width: 100%;
     height: 500px;
 }
-.imagenTravel1{
+
+.imagenTravel1 {
     background-color: rgb(0, 0, 0);
-    width: 100%;    
+    width: 100%;
     margin: 0%;
     padding: 0%;
     position: relative;
 
 }
-.sectionT p{
+
+.sectionT p {
     font-style: italic;
     font-size: 3rem;
     font-weight: 600;
@@ -82,36 +184,38 @@ main{
     border-radius: 5%;
     /* border: solid 1px red; */
 }
-.sectionT{
+
+.sectionT {
     position: relative;
 }
 
 /* SECTION 2 TRAVEL*/
 
-.cartas{
+.cartass {
     background: #070809;
     background: rgb(25, 27, 28);
     background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr ;
-    grid-template-areas: 
-    "h4 h4 h4"
-    "texto texto texto"
-    "contenedor1 contenedor2 contenedor3"
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "h4 h4 h4"
+        "texto texto texto"
+        /* "contenedor1 contenedor2 contenedor3" */
     ;
     height: 840px;
 }
-.card{
+
+.card {
     background-color: rgb(0, 0, 0);
     position: relative;
-    left: rem;
     bottom: 10px;
     height: 430px;
     margin: 5rem;
     width: 350px;
 }
-.card img{
+
+.card img {
     height: 340px;
     opacity: 0.8;
     transform: scale(1.04);
@@ -119,28 +223,34 @@ main{
     position: relative;
     left: 7px;
 }
-.card p{
+
+.card p {
     color: white;
 }
-.card h5{
+
+.card h5 {
     color: rgb(255, 255, 255);
 }
-.ache4{
+
+.ache4 {
     color: white;
     grid-area: h4;
 }
-.ache4 h4{
+
+.ache4 h4 {
     position: relative;
     top: 2.7rem;
     left: 5rem;
     font-size: 34px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.texto{
+
+.texto {
     grid-area: texto;
     padding: 2rem;
 }
-.texto p{
+
+.texto p {
     font-size: 18px;
     position: relative;
     left: 3rem;
@@ -150,9 +260,9 @@ main{
 }
 
 /*DESCUENTOSSS*/
-.descuentos{
-    background: rgb(44,8,61);
-    background: radial-gradient(circle, rgba(44,8,61,1) 0%, rgba(36,11,110,1) 49%, rgba(44,8,61,1) 100%);
+.descuentos {
+    background: rgb(44, 8, 61);
+    background: radial-gradient(circle, rgba(44, 8, 61, 1) 0%, rgba(36, 11, 110, 1) 49%, rgba(44, 8, 61, 1) 100%);
     padding: 3.5rem;
     padding: 3.5rem;
     display: grid;
@@ -161,21 +271,23 @@ main{
     margin-bottom: 1.2rem;
     position: relative;
     top: 5px;
-    
+
 }
-.misDescuentos{
+
+.misDescuentos {
     color: white;
     font-size: 1.4rem;
     text-align: center;
 }
 
 /* COMPRAR PASAJE */
-.tituloT{
+.tituloT {
     margin-left: 6rem;
     /* margin-top: 4.5rem; */
     font-size: 2rem;
 }
-.tituloT h4{
+
+.tituloT h4 {
     color: white;
     font-size: 3rem;
     position: relative;
@@ -183,7 +295,8 @@ main{
     background-color: rgba(0, 0, 0, 0.467);
     width: 550px;
 }
-.parrafo{
+
+.parrafo {
     margin-left: 6rem;
     position: relative;
     top: 200px;
@@ -193,7 +306,8 @@ main{
     background-color: rgba(0, 0, 0, 0.364);
     width: 1270px;
 }
-.formulario{
+
+.formulario {
     border: solid 1px rgb(255, 255, 255);
     border-radius: 7px;
     background-color: rgba(0, 0, 0, 0.467);
@@ -205,200 +319,245 @@ main{
     top: 200px;
     /* background-image: url(../imagenes/chilling.jpg); */
 }
-.col-md-6{
+
+.col-md-6 {
     color: white;
     font-size: 1.6rem;
 }
-.col-md-4{
+
+.col-md-4 {
     color: rgb(255, 255, 255);
     font-size: 1.6rem;
 
 }
-.col-md-3{
+
+.col-md-3 {
     color: rgb(255, 255, 255);
     font-size: 1.6rem;
 }
-.form-check{
+
+.form-check {
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
 }
-.invalid-feedback{
+
+.invalid-feedback {
     color: rgb(255, 255, 255);
 }
 
-.mapaa{
+.mapaa {
     background-color: rgba(0, 0, 0, 0.775);
     height: 515px;
 }
-.mapa{
+
+.mapa {
     border: solid 1px rgba(0, 0, 0, 0.734);
     margin: 2.3rem;
 }
-.mapa iframe{
+
+.mapa iframe {
     width: 1320px;
     height: 500px;
     position: relative;
     bottom: 1px;
     top: 5px;
 }
-.hr2{
+
+.hr2 {
     border: solid 2.3px rgb(0, 0, 0);
     color: black;
 }
-.tyform{
+
+.tyform {
     height: 770px;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 /*ABOUT US */
-.aboutUsT{
+.aboutUsT {
     background: #070809;
     background: rgb(25, 27, 28);
     background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
     height: 720px;
 }
-.aboutUsTravel{
+
+.aboutUsTravel {
     margin: 2rem;
     padding: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto auto;
-    grid-template-areas: 
+    grid-template-areas:
         "h2 h2"
         "p p"
         "image p2"
     ;
 
 }
-.aboutUsTravel h2{
+
+.aboutUsTravel h2 {
     padding: 2rem;
     font-size: 3.4rem;
     color: white;
     grid-area: h2;
 }
-.aboutUsTravel p{
+
+.aboutUsTravel p {
     font-size: 20px;
     grid-area: p;
     color: white;
     line-height: 1.7;
 }
-.aboutUsTravel img:hover{
+
+.aboutUsTravel img:hover {
     grid-area: image;
-    padding-top: 1.2rem;
-    transform: scale(1.04);
+    transform: scale(0.9);
+    transition-duration: 0.5s;
 }
 
-.p2{
+.p2 {
     grid-area: p2;
     padding: 12.4rem 4rem;
-
 }
-.footer{
+
+.footer {
     background-color: rgb(0, 0, 0);
+    height: 130px;
     display: grid;
     font-size: 1.4rem;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr auto auto auto auto;
-    grid-template-areas: 
-        "home . ."
-        "travel . ."
-        "about . ."
-        "contact . ."
-        "helpp  parrafo ."
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "paginas"
+        "startt"
     ;
+
 }
-.pf{
-    grid-area: parrafo;
+
+.pf {
+    grid-area: startt;
 }
-.pf p{
+.home {
+    grid-area: paginas;
+}
+
+.home p{
+    position: relative;
+    bottom: -20px;
+    left: 530px;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.pf p {
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 1.3rem;
+    position: relative;
+    bottom: 5px;
+    left: 430px;
 }
-.pHome{
-    grid-area: home;
-    color: rgb(255, 255, 255);
-}
-.pTravel{
-    grid-area: travel;
-    color: rgb(255, 255, 255);
-}
-.pAbout{
-    grid-area: about;
-    color: rgb(255, 255, 255);
-}
-.pContact{
-    grid-area: contact;
-    color: rgb(255, 255, 255);
-}
-.pHelp{
-    grid-area: helpp;
-    color: rgb(255, 255, 255);
-}
+
 @media(max-width: 320px) {
 
-    body{
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-        background: #070809;
-        background: rgb(25, 27, 28);
-        background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
-        height: 810px;
-        height: 810px;
-    }
-    
+
+
     /* HEADER INDEX*/
-    
-    .gridContainer{
-        padding: 4px;
-        height: 80px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-rows: 4rem;
-        align-items: center;
+
+    .header {
         background-color: #183247;
+        height: 80px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 99999;
     }
-    .menu ul{
-        list-style: none;
+    
+    .nav {
+        display: flex;
+        justify-content: space-between;
+    
+        max-width: 992px;
+        margin: 0 auto;
     }
-    .menu li{
-        display: inline-block;
-        padding: 0 1rem;
-        position: relative;
-        top: 20px;
-    }
-    .menu a{
+    
+    .nav-link {
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.857);
-        font-size: 1.5rem;
-        font-weight: 600;
+        color: white;
     }
-    .logo img{
-        width: 250px;
-        height: 74px;
-        position: relative;
-        top: 14.7px;
+    
+    .logo img {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 0 40px;
+        line-height: 80px;
+        height: 75px;
+        width: 300px;
+    }
+    
+    
+    .nav-menu {
+        display: flex;
+        margin-right: 40px;
+        list-style: none;
+    
+    }
+    
+    .nav-menu-item {
+        font-size: 18px;
+        margin: 0 10px;
+        line-height: 80px;
+        text-transform: uppercase;
+        width: max-content;
+    }
+    
+    .nav-menu-link {
+        padding: 8px 12px;
+        border-radius: 3px;
+    }
+    
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        transition: 0.5s;
+    }
+    
+    /* TOGGLE */
+    .nav-toggle {
+        color: white;
+        background: none;
+        border: none;
+        font-size: 30px;
+        padding: 0 20px;
+        line-height: 60px;
+        cursor: pointer;
+        display: none;
     }
     /* SECTION T*/
-    
+
     /* .sectionT{
         background-color: rgba(7, 6, 6, 0.796);
         padding: 0px;
         margin: 0%;
     } */
-    .imagenTravel1 img{
+    .imagenTravel1 img {
         opacity: 0.7;
         width: 100%;
         height: 500px;
     }
-    .imagenTravel1{
+
+    .imagenTravel1 {
         background-color: rgb(0, 0, 0);
-        width: 100%;    
+        width: 100%;
         margin: 0%;
         padding: 0%;
         position: relative;
-    
+
     }
-    .sectionT p{
+
+    .sectionT p {
         font-style: italic;
         font-size: 3rem;
         font-weight: 600;
@@ -406,42 +565,43 @@ main{
         background-color: rgba(61, 61, 61, 0.529);
         position: absolute;
         text-align: center;
-        left: 26%;
-        padding: 2rem;
-        bottom: 22rem;
         border-radius: 5%;
         /* border: solid 1px red; */
     }
-    .sectionT{
+
+    .sectionT {
         position: relative;
     }
-    
+
     /* SECTION 2 TRAVEL*/
-    
-    .cartas{
+
+    .cartas {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr ;
-        grid-template-areas: 
-        "h4 h4 h4"
-        "texto texto texto"
-        "contenedor1 contenedor2 contenedor3"
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "h4"
+            "texto"
+            "contenedor1"
+            "contenedor2" 
+            "contenedor3"
         ;
-        height: 840px;
+        height: 240px;
     }
-    .card{
+
+    .card {
         background-color: rgb(0, 0, 0);
         position: relative;
-        left: rem;
         bottom: 10px;
         height: 430px;
         margin: 5rem;
         width: 350px;
     }
-    .card img{
+
+    .card img {
         height: 340px;
         opacity: 0.8;
         transform: scale(1.04);
@@ -449,28 +609,34 @@ main{
         position: relative;
         left: 7px;
     }
-    .card p{
+
+    .card p {
         color: white;
     }
-    .card h5{
+
+    .card h5 {
         color: rgb(255, 255, 255);
     }
-    .ache4{
+
+    .ache4 {
         color: white;
         grid-area: h4;
     }
-    .ache4 h4{
+
+    .ache4 h4 {
         position: relative;
         top: 2.7rem;
         left: 5rem;
         font-size: 34px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .texto{
+
+    .texto {
         grid-area: texto;
         padding: 2rem;
     }
-    .texto p{
+
+    .texto p {
         font-size: 18px;
         position: relative;
         left: 3rem;
@@ -478,11 +644,11 @@ main{
         width: 1200px;
         line-height: 1.7;
     }
-    
+
     /*DESCUENTOSSS*/
-    .descuentos{
-        background: rgb(44,8,61);
-        background: radial-gradient(circle, rgba(44,8,61,1) 0%, rgba(36,11,110,1) 49%, rgba(44,8,61,1) 100%);
+    .descuentos {
+        background: rgb(44, 8, 61);
+        background: radial-gradient(circle, rgba(44, 8, 61, 1) 0%, rgba(36, 11, 110, 1) 49%, rgba(44, 8, 61, 1) 100%);
         padding: 3.5rem;
         padding: 3.5rem;
         display: grid;
@@ -491,21 +657,23 @@ main{
         margin-bottom: 1.2rem;
         position: relative;
         top: 5px;
-        
+
     }
-    .misDescuentos{
+
+    .misDescuentos {
         color: white;
         font-size: 1.4rem;
         text-align: center;
     }
-    
+
     /* COMPRAR PASAJE */
-    .tituloT{
+    .tituloT {
         margin-left: 6rem;
         /* margin-top: 4.5rem; */
         font-size: 2rem;
     }
-    .tituloT h4{
+
+    .tituloT h4 {
         color: white;
         font-size: 3rem;
         position: relative;
@@ -513,7 +681,8 @@ main{
         background-color: rgba(0, 0, 0, 0.467);
         width: 550px;
     }
-    .parrafo{
+
+    .parrafo {
         margin-left: 6rem;
         position: relative;
         top: 200px;
@@ -523,7 +692,8 @@ main{
         background-color: rgba(0, 0, 0, 0.364);
         width: 1270px;
     }
-    .formulario{
+
+    .formulario {
         border: solid 1px rgb(255, 255, 255);
         border-radius: 7px;
         background-color: rgba(0, 0, 0, 0.467);
@@ -535,102 +705,117 @@ main{
         top: 200px;
         /* background-image: url(../imagenes/chilling.jpg); */
     }
-    .col-md-6{
+
+    .col-md-6 {
         color: white;
         font-size: 1.6rem;
     }
-    .col-md-4{
+
+    .col-md-4 {
         color: rgb(255, 255, 255);
         font-size: 1.6rem;
-    
+
     }
-    .col-md-3{
+
+    .col-md-3 {
         color: rgb(255, 255, 255);
         font-size: 1.6rem;
     }
-    .form-check{
+
+    .form-check {
         color: rgb(255, 255, 255);
         font-size: 1.5rem;
     }
-    .invalid-feedback{
+
+    .invalid-feedback {
         color: rgb(255, 255, 255);
     }
-    
-    .mapaa{
+
+    .mapaa {
         background-color: rgba(0, 0, 0, 0.775);
         height: 515px;
     }
-    .mapa{
+
+    .mapa {
         border: solid 1px rgba(0, 0, 0, 0.734);
         margin: 2.3rem;
     }
-    .mapa iframe{
+
+    .mapa iframe {
         width: 1320px;
         height: 500px;
         position: relative;
         bottom: 1px;
         top: 5px;
     }
-    .hr2{
+
+    .hr2 {
         border: solid 2.3px rgb(0, 0, 0);
         color: black;
     }
-    .tyform{
+
+    .tyform {
         height: 770px;
         background-image: url("../imagenes/chilling.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
+
     /*ABOUT US */
-    .aboutUsT{
+    .aboutUsT {
         background: #070809;
         background: rgb(25, 27, 28);
         background: radial-gradient(circle, rgba(27, 82, 91, 1) 0%, rgb(19, 41, 55) 50%, rgb(12, 26, 24) 100%);
         height: 720px;
     }
-    .aboutUsTravel{
+
+    .aboutUsTravel {
         margin: 2rem;
         padding: 3rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto auto;
-        grid-template-areas: 
+        grid-template-areas:
             "h2 h2"
             "p p"
             "image p2"
         ;
-    
+
     }
-    .aboutUsTravel h2{
+
+    .aboutUsTravel h2 {
         padding: 2rem;
         font-size: 3.4rem;
         color: white;
         grid-area: h2;
     }
-    .aboutUsTravel p{
+
+    .aboutUsTravel p {
         font-size: 20px;
         grid-area: p;
         color: white;
         line-height: 1.7;
     }
-    .aboutUsTravel img:hover{
+
+    .aboutUsTravel img:hover {
         grid-area: image;
         padding-top: 1.2rem;
         transform: scale(1.04);
     }
-    
-    .p2{
+
+    .p2 {
         grid-area: p2;
         padding: 12.4rem 4rem;
-    
+
     }
-    .footer{
+
+    .footer {
         background-color: rgb(0, 0, 0);
         display: grid;
         font-size: 1.4rem;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr auto auto auto auto;
-        grid-template-areas: 
+        grid-template-areas:
             "home . ."
             "travel . ."
             "about . ."
@@ -638,45 +823,53 @@ main{
             "helpp  parrafo ."
         ;
     }
-    .pf{
+
+    .pf {
         grid-area: parrafo;
     }
-    .pf p{
+
+    .pf p {
         color: rgb(255, 255, 255);
         text-align: center;
         font-size: 1.3rem;
     }
-    .pHome{
+
+    .pHome {
         grid-area: home;
         color: rgb(255, 255, 255);
     }
-    .pTravel{
+
+    .pTravel {
         grid-area: travel;
         color: rgb(255, 255, 255);
     }
-    .pAbout{
+
+    .pAbout {
         grid-area: about;
         color: rgb(255, 255, 255);
     }
-    .pContact{
+
+    .pContact {
         grid-area: contact;
         color: rgb(255, 255, 255);
     }
-    .pHelp{
+
+    .pHelp {
         grid-area: helpp;
         color: rgb(255, 255, 255);
     }
 }
-@media (min-width: 481px) and (max-width :899px){
 
-    body{
-    font-family: sans-serif;
-    background-color: rgb(242, 242, 242);
-}
+@media (min-width: 481px) and (max-width :899px) {
 
-/* HEADER INDEX*/
+    body {
+        font-family: sans-serif;
+        background-color: rgb(242, 242, 242);
+    }
 
-    .gridContainer{
+    /* HEADER INDEX*/
+
+    .gridContainer {
         padding: 4px;
         height: 80px;
         width: 1208px;
@@ -686,49 +879,55 @@ main{
         align-items: center;
         background-color: #391847;
     }
-    .menu ul{
+
+    .menu ul {
         list-style: none;
     }
-    .menu li{
-    display: inline-block;
-    padding: 0 1rem;
-    position: relative;
-    top: 20px;
+
+    .menu li {
+        display: inline-block;
+        padding: 0 1rem;
+        position: relative;
+        top: 20px;
     }
-    .menu a{
+
+    .menu a {
         text-decoration: none;
         color: rgb(255, 255, 255);
         font-size: 1.5rem;
         font-weight: 600;
     }
-    .logo img{
+
+    .logo img {
         width: 270px;
         height: 85px;
         position: relative;
         top: 13px;
     }
-/* SECTION T*/
 
-/* .sectionT{
+    /* SECTION T*/
+
+    /* .sectionT{
     background-color: rgba(7, 6, 6, 0.796);
     padding: 0px;
     margin: 0%;
 } */
-    .imagenTravel1 img{
+    .imagenTravel1 img {
         opacity: 0.7;
         width: 100%;
         height: 500px;
     }
-    .imagenTravel1{
+
+    .imagenTravel1 {
         background-color: rgb(0, 0, 0);
-        width: 1207px;    
+        width: 1207px;
         margin: 0%;
         padding: 0%;
         position: relative;
 
     }
 
-    .sectionT p{
+    .sectionT p {
         font-style: italic;
         font-size: 3rem;
         font-weight: 600;
@@ -740,22 +939,23 @@ main{
         padding: 2rem;
         bottom: 22rem;
         border-radius: 5%;
-    /* border: solid 1px red; */
-}
-    .sectionT{
-    position: relative;
+        /* border: solid 1px red; */
     }
 
-/* SECTION 2 TRAVEL*/
+    .sectionT {
+        position: relative;
+    }
 
-    .section2T{
+    /* SECTION 2 TRAVEL*/
+
+    .section2T {
         /* border: solid 1px blue; */
         width: 100px;
         padding: 2rem;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr ;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "h1 h1 h1"
             "p p p"
             "containerr1 containerr2 containerr3"
@@ -766,15 +966,18 @@ main{
         right: 5rem;
         /* gap: 1rem; */
     }
-    .section2T p{
+
+    .section2T p {
         font-size: 1.4rem;
     }
-    .section2T h1{
+
+    .section2T h1 {
         grid-area: h1;
         padding: 1.5rem;
         font-size: 1.9rem;
         text-align: center;
     }
+
     .comoViajar {
         /* border: solid 1px red; */
         grid-area: h1;
@@ -782,50 +985,56 @@ main{
         font-size: 1.9rem;
         width: 1000px;
     }
-    .comoViajar{
+
+    .comoViajar {
         grid-area: p;
         font-size: 1.4rem;
     }
-    .containerr1{
-    /* border: solid 2px rgb(0, 0, 0); */
-    grid-area: containerr1;
-    margin: 2rem;
-    padding: 3rem;
-    }
-    .containerr1 img{
-    width: 300px;
-    height: 170px;
-    margin: 10px;
-    border-radius: 10px;
+
+    .containerr1 {
+        /* border: solid 2px rgb(0, 0, 0); */
+        grid-area: containerr1;
+        margin: 2rem;
+        padding: 3rem;
     }
 
-    .containerr2{
-    /* border: solid 2px rgb(0, 0, 0); */
-    grid-area: containerr2;
-    margin: 2rem;
-    padding: 3rem;
-    }
-    .containerr2 img{
-    width: 300px;
-    height: 170px;
-    margin: 10px;
-    border-radius: 10px;
-    }
-    .containerr3{
-    /* border: solid 2px rgb(0, 0, 0); */
-    grid-area: containerr3;
-    margin: 2rem;
-    padding: 3rem;
-    }
-    .containerr3 img{
-    width: 300px;
-    height: 170px;
-    margin: 10px;
-    border-radius: 10px;
+    .containerr1 img {
+        width: 300px;
+        height: 170px;
+        margin: 10px;
+        border-radius: 10px;
     }
 
-/*DESCUENTOSSS*/
-    .descuentos{
+    .containerr2 {
+        /* border: solid 2px rgb(0, 0, 0); */
+        grid-area: containerr2;
+        margin: 2rem;
+        padding: 3rem;
+    }
+
+    .containerr2 img {
+        width: 300px;
+        height: 170px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .containerr3 {
+        /* border: solid 2px rgb(0, 0, 0); */
+        grid-area: containerr3;
+        margin: 2rem;
+        padding: 3rem;
+    }
+
+    .containerr3 img {
+        width: 300px;
+        height: 170px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    /*DESCUENTOSSS*/
+    .descuentos {
         background-color: rgb(0, 0, 0);
         padding: 3.5rem;
         display: grid;
@@ -833,167 +1042,193 @@ main{
         grid-template-rows: 1fr;
         margin-bottom: 1.2rem;
         width: 1208px;
-    
+
     }
-    .misDescuentos{
+
+    .misDescuentos {
         color: white;
         font-size: 1.4rem;
         text-align: center;
     }
 
-/* COMPRAR PASAJE */
-    .tituloT{
+    /* COMPRAR PASAJE */
+    .tituloT {
         margin-left: 6rem;
-    /* margin-top: 4.5rem; */
+        /* margin-top: 4.5rem; */
         font-size: 2rem;
-}
-    .tituloT h4{
-    color: white;
-    font-size: 2.4rem;
-    position: relative;
-    top: 5rem;
-    background-color: rgba(0, 0, 0, 0.467);
-    width: 460px;
     }
-.parrafo{
-    margin-left: 6rem;
-    margin-top: 9rem;
-    font-size: 1.4rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.467);
-    border-radius: 3px;
-    width: 1148px;
-}
-.formulario{
-    border: solid 1px rgb(255, 255, 255);
-    border-radius: 7px;
-    background-color: rgba(0, 0, 0, 0.467);
-    font-size: 1.4rem;
-    margin: 6rem;
-    padding-top: 2rem;
-    padding: 3rem;
-}
-.col-md-6{
-    color: white;
-    font-size: 1.6rem;
-}
-.col-md-4{
-    color: rgb(255, 255, 255);
-    font-size: 1.6rem;
 
-}
-.col-md-3{
-    color: rgb(255, 255, 255);
-    font-size: 1.6rem;
-}
-.form-check{
-    color: rgb(255, 255, 255);
-    font-size: 1.5rem;
-}
-.invalid-feedback{
-    color: rgb(255, 255, 255);
-}
+    .tituloT h4 {
+        color: white;
+        font-size: 2.4rem;
+        position: relative;
+        top: 5rem;
+        background-color: rgba(0, 0, 0, 0.467);
+        width: 460px;
+    }
 
-.mapaa{
-    background-color: rgba(0, 0, 0, 0.775);
-    height: 515px;
-}
-.mapa{
-    border: solid 1px rgba(0, 0, 0, 0.734);
-    margin: 2.3rem;
-}
-.mapa iframe{
-    width: 1190px;
-    height: 500px;
-    position: relative;
-    right: 1rem;
-    bottom: 1px;
-    top: 5px;
-}
-.hr2{
-    border: solid 2.3px rgb(0, 0, 0);
-    color: black;
-}
-.tyform{
-    height: 780px;
-    background-image: url("../imagenes/dubai.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1208px;
-}
-/*ABOUT US */
+    .parrafo {
+        margin-left: 6rem;
+        margin-top: 9rem;
+        font-size: 1.4rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.467);
+        border-radius: 3px;
+        width: 1148px;
+    }
 
-.aboutUsTravel{
-    margin: 2rem;
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto auto;
-    grid-template-areas: 
-        "h2 h2"
-        "p p"
-        "image p2"
-    ;
+    .formulario {
+        border: solid 1px rgb(255, 255, 255);
+        border-radius: 7px;
+        background-color: rgba(0, 0, 0, 0.467);
+        font-size: 1.4rem;
+        margin: 6rem;
+        padding-top: 2rem;
+        padding: 3rem;
+    }
 
-}
-.aboutUsTravel h2{
-    padding: 2rem;
-    font-size: 2.6rem;
-    grid-area: h2;
-}
-.aboutUsTravel p{
-    font-size: 1.5rem;
-    grid-area: p;
-}
-.aboutUsTravel img{
-    grid-area: image;
-    padding-top: 1.2rem;
-}
-.p2{
-    grid-area: p2;
-    padding: 12.4rem 4rem;
+    .col-md-6 {
+        color: white;
+        font-size: 1.6rem;
+    }
 
-}
-.footer{
-    background-color: rgb(0, 0, 0);
-    display: grid;
-    font-size: 1.4rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr auto auto auto auto;
-    grid-template-areas: 
-        "home . ."
-        "travel . ."
-        "about . ."
-        "contact . ."
-        "helpp  parrafo ."
-    ;
-}
-.pf{
-    grid-area: parrafo;
-}
-.pf p{
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 1.3rem;
-}
-.pHome{
-    grid-area: home;
-    color: rgb(255, 255, 255);
-}
-.pTravel{
-    grid-area: travel;
-    color: rgb(255, 255, 255);
-}
-.pAbout{
-    grid-area: about;
-    color: rgb(255, 255, 255);
-}
-.pContact{
-    grid-area: contact;
-    color: rgb(255, 255, 255);
-}
-.pHelp{
-    grid-area: helpp;
-    color: rgb(255, 255, 255);
-}
+    .col-md-4 {
+        color: rgb(255, 255, 255);
+        font-size: 1.6rem;
+
+    }
+
+    .col-md-3 {
+        color: rgb(255, 255, 255);
+        font-size: 1.6rem;
+    }
+
+    .form-check {
+        color: rgb(255, 255, 255);
+        font-size: 1.5rem;
+    }
+
+    .invalid-feedback {
+        color: rgb(255, 255, 255);
+    }
+
+    .mapaa {
+        background-color: rgba(0, 0, 0, 0.775);
+        height: 515px;
+    }
+
+    .mapa {
+        border: solid 1px rgba(0, 0, 0, 0.734);
+        margin: 2.3rem;
+    }
+
+    .mapa iframe {
+        width: 1190px;
+        height: 500px;
+        position: relative;
+        right: 1rem;
+        bottom: 1px;
+        top: 5px;
+    }
+
+    .hr2 {
+        border: solid 2.3px rgb(0, 0, 0);
+        color: black;
+    }
+
+    .tyform {
+        height: 780px;
+        background-image: url("../imagenes/dubai.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1208px;
+    }
+
+    /*ABOUT US */
+
+    .aboutUsTravel {
+        margin: 2rem;
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto auto;
+        grid-template-areas:
+            "h2 h2"
+            "p p"
+            "image p2"
+        ;
+
+    }
+
+    .aboutUsTravel h2 {
+        padding: 2rem;
+        font-size: 2.6rem;
+        grid-area: h2;
+    }
+
+    .aboutUsTravel p {
+        font-size: 1.5rem;
+        grid-area: p;
+    }
+
+    .aboutUsTravel img {
+        grid-area: image;
+        padding-top: 1.2rem;
+    }
+
+    .p2 {
+        grid-area: p2;
+        padding: 12.4rem 4rem;
+
+    }
+
+    .footer {
+        background-color: rgb(0, 0, 0);
+        display: grid;
+        font-size: 1.4rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto auto auto auto;
+        grid-template-areas:
+            "home . ."
+            "travel . ."
+            "about . ."
+            "contact . ."
+            "helpp  parrafo ."
+        ;
+    }
+
+    .pf {
+        grid-area: parrafo;
+    }
+
+    .pf p {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .pHome {
+        grid-area: home;
+        color: rgb(255, 255, 255);
+    }
+
+    .pTravel {
+        grid-area: travel;
+        color: rgb(255, 255, 255);
+    }
+
+    .pAbout {
+        grid-area: about;
+        color: rgb(255, 255, 255);
+    }
+
+    .pContact {
+        grid-area: contact;
+        color: rgb(255, 255, 255);
+    }
+
+    .pHelp {
+        grid-area: helpp;
+        color: rgb(255, 255, 255);
+    }
 }
